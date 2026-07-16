@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet data-dc-atomics>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+body{margin:0;background:#EDEDEA;font-family:'Pretendard',system-ui,sans-serif;}
+a{color:#1D5FBF;}
+a:hover{color:#123B7A;}
+@media (max-width:900px){
+  .header-logo{width:100%!important;display:flex!important;justify-content:center!important;order:-1;}
+  .header-cta{display:none!important;}
+  div[style*="width:1440px;margin:0 auto"],div[style*="width: 1440px; margin: 0 auto"]{width:100%!important;box-shadow:none!important;}
+  div[style*="display:flex"],div[style*="display: flex"]{flex-wrap:wrap!important;}
+  div[style*="flex:none;width:520px"],div[style*="flex: none; width: 520px"],div[style*="flex:none;width:420px"],div[style*="flex: none; width: 420px"],div[style*="flex:none;width:380px"],div[style*="flex: none; width: 380px"],div[style*="width:520px;height:320px"],div[style*="width: 520px; height: 320px"]{width:100%!important;flex:none!important;height:auto!important;}
+  div[style*="max-width:900px"],div[style*="max-width: 900px"],div[style*="max-width:1100px"],div[style*="max-width: 1100px"],div[style*="max-width:860px"],div[style*="max-width: 860px"]{padding-left:16px!important;padding-right:16px!important;box-sizing:border-box;}
+  img{max-width:100%;}
+  div[style*="grid-template-columns:repeat(4"],div[style*="grid-template-columns: repeat(4"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="grid-template-columns:repeat(6"],div[style*="grid-template-columns: repeat(6"]{grid-template-columns:repeat(3,1fr)!important;}
+  div[style*="grid-template-columns:repeat(3"],div[style*="grid-template-columns: repeat(3"]{grid-template-columns:repeat(1,1fr)!important;}
+  div[style*="padding:8px 40px"],div[style*="padding: 8px 40px"]{padding:8px 16px!important;gap:6px!important;font-size:10px!important;overflow-x:auto;white-space:nowrap;}
+  div[style*="padding:14px 40px"],div[style*="padding: 14px 40px"]{padding:12px 16px!important;gap:10px!important;}
+  div[style*="padding:16px 40px"],div[style*="padding: 16px 40px"]{padding:12px 16px!important;}
+  div[style*="padding:28px 40px"],div[style*="padding: 28px 40px"]{padding:20px 16px!important;}
+  div[style*="padding:56px 40px"],div[style*="padding: 56px 40px"]{padding:32px 16px!important;}
+  div[style*="padding:64px 40px"],div[style*="padding: 64px 40px"]{padding:36px 16px!important;}
+  div[style*="padding:80px 40px"],div[style*="padding: 80px 40px"]{padding:44px 16px!important;}
+  div[style*="padding:100px 40px"],div[style*="padding: 100px 40px"]{padding:48px 16px!important;}
+  div[style*="font-size:42px"],div[style*="font-size: 42px"]{font-size:26px!important;}
+  div[style*="font-size:38px"],div[style*="font-size: 38px"]{font-size:24px!important;}
+  div[style*="font-size:32px;font-weight:800;color:#0B2340"],div[style*="font-size: 32px; font-weight: 800; color: #0B2340"]{font-size:22px!important;}
+  div[style*="font-size:26px;font-weight:800"],div[style*="font-size: 26px; font-weight: 800"]{font-size:20px!important;}
+  div[style*="padding:14px 40px;display:flex;align-items:center;justify-content:space-between"],div[style*="padding: 14px 40px; display: flex; align-items: center; justify-content: space-between"]{flex-wrap:wrap!important;gap:10px!important;padding:12px 16px!important;justify-content:center!important;}
+  div[style*="display:flex;gap:32px;font-size:15px"],div[style*="display: flex; gap: 32px; font-size: 15px"]{gap:8px 14px!important;font-size:12px!important;flex-wrap:wrap!important;justify-content:center!important;}
+  div[style*="grid-template-columns:repeat(5"],div[style*="grid-template-columns: repeat(5"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="padding:0 40px 64px;display:flex;gap:36px;align-items:flex-start"],div[style*="padding: 0px 40px 64px; display: flex; gap: 36px; align-items: flex-start"]{flex-direction:column!important;}
+  div[style*="flex:none;width:220px;border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;position:sticky"]{width:100%!important;position:static!important;}
+  a[style*="display:flex"],a[style*="display: flex"]{flex-wrap:wrap!important;}
+  div[style*="position:absolute"][style*="width:220"],div[style*="position: absolute"][style*="width: 220"]{display:none!important;}
+  .prod-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .cat-layout{flex-direction:column!important;}
+  .cat-sidebar{width:100%!important;position:static!important;box-sizing:border-box!important;}
+}
+</style>
+</helmet>
+
+<div style="width:1440px;max-width:100%;margin:0 auto;font-family:'Pretendard',system-ui,sans-serif;color:#16181D;background:#FAFAF8;box-shadow:0 0 40px rgba(0,0,0,.08);overflow-x:hidden;">
+
+  <div style="color:#C9D6EA;font-size:12px;padding:8px 40px;display:flex;justify-content:center;gap:24px;letter-spacing:.02em;background-color:#193456;">
+    <span>A/S Tel&nbsp; 1588-8452&nbsp; &nbsp; &nbsp; &nbsp;·&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;센스링크 고객센터&nbsp; 1544-0344</span>
+  </div>
+
+  <div style="background:#fff;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E7E7E2;">
+    <a href="SensLink 홈페이지.dc.html" class="header-logo" style="display:block;"><img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:38px;width:auto;display:block;"></a>
+    <div style="display:flex;gap:32px;font-size:15px;font-weight:600;color:#16181D;">
+      <a href="SensLink 홈페이지.dc.html" style="color:inherit;text-decoration:none;">베스트 상품</a><span style="color:#1D5FBF;">전체 상품</span><span>이벤트 상품</span><a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;">묻고 답하기</a><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;">센스링크 소개</a>
+    </div>
+    <a href="SensLink 전체상품.dc.html" class="header-cta" style="text-decoration:none;"><div style="background:#0B2340;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:6px;">전체 상품 보기</div></a>
+  </div>
+
+  <div style="padding:16px 40px;font-size:13px;color:#9CA3AF;"><a href="SensLink 홈페이지.dc.html" style="color:#9CA3AF;text-decoration:none;">홈</a> <span style="margin:0 6px;">/</span> <span style="color:#16181D;font-weight:600;">전체 상품</span></div>
+
+  <div class="cat-layout" style="padding:0 40px 64px;display:flex;gap:36px;align-items:flex-start;">
+
+    <div class="cat-sidebar" style="flex:none;width:220px;border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;position:sticky;top:20px;">
+      <div style="padding:16px 20px;font-size:14px;font-weight:800;background:#0B2340;color:#fff;">카테고리</div>
+      <div style="display:flex;flex-direction:column;">
+        <div style="padding:14px 20px;font-size:14px;font-weight:700;color:#1D5FBF;background:#EDF3FC;border-left:3px solid #1D5FBF;">전체 상품 <span style="float:right;color:#9CA3AF;font-weight:600;">9</span></div>
+        <div style="padding:14px 20px;font-size:14px;color:#3A3A3A;border-top:1px solid #F0F0EE;">헤어케어 <span style="float:right;color:#B0B0B0;">5</span></div>
+        <div style="padding:14px 20px;font-size:14px;color:#3A3A3A;border-top:1px solid #F0F0EE;">면도·이발 <span style="float:right;color:#B0B0B0;">1</span></div>
+        <div style="padding:14px 20px;font-size:14px;color:#3A3A3A;border-top:1px solid #F0F0EE;">구강케어 <span style="float:right;color:#B0B0B0;">2</span></div>
+        <div style="padding:14px 20px;font-size:14px;color:#3A3A3A;border-top:1px solid #F0F0EE;">생활가전 <span style="float:right;color:#B0B0B0;">1</span></div>
+      </div>
+      <div style="padding:18px 20px;border-top:1px solid #E7E7E2;">
+        <div style="font-size:12px;font-weight:700;color:#6B7280;margin-bottom:10px;">정품 안내</div>
+        <div style="font-size:12px;color:#6B7280;line-height:1.7;">모든 상품은 파나소닉 본사 인증을 받은 정품이며, 구매 후 1년간 무상 A/S가 제공됩니다.</div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;">
+      <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:20px;">
+        <div style="font-size:26px;font-weight:800;">전체 상품 <span style="font-size:15px;font-weight:600;color:#9CA3AF;">9개</span></div>
+        <div style="display:flex;gap:8px;">
+          <div style="background:#0B2340;color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:20px;">인기순</div>
+          <div style="background:#fff;border:1px solid #E7E7E2;color:#6B7280;font-size:13px;font-weight:600;padding:8px 16px;border-radius:20px;">신상품순</div>
+          <div style="background:#fff;border:1px solid #E7E7E2;color:#6B7280;font-size:13px;font-weight:600;padding:8px 16px;border-radius:20px;">낮은 가격순</div>
+          <div style="background:#fff;border:1px solid #E7E7E2;color:#6B7280;font-size:13px;font-weight:600;padding:8px 16px;border-radius:20px;">높은 가격순</div>
+        </div>
+      </div>
+
+      <div class="prod-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+
+        <a href="SensLink 상품상세.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/eh-na7m-2.jpg" alt="파나소닉 나노케어 헤어드라이기 나노이 접이식 (EH-NA7M)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+            <div style="position:absolute;top:10px;left:10px;background:#E23B3B;color:#fff;font-weight:800;font-size:13px;padding:4px 8px;border-radius:4px;">25%</div>
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">헤어드라이어</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 나노케어 헤어드라이기 나노이 접이식 (EH-NA7M)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 (8)</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">133,200원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">179,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-에어스타일러.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/airstyler/main.jpg" alt="파나소닉 나노케어 5in1 에어스타일러 (EH-KN9L)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;background:#fff;">
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">헤어스타일러</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 나노케어 5in1 멀티 에어스타일러 (EH-KN9L)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 · 리뷰 0개</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">259,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">269,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-고데기.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/curler/main.jpg" alt="파나소닉 나노케어 고데기 (EH-HS0J)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+            <div style="position:absolute;top:10px;left:10px;background:#E23B3B;color:#fff;font-weight:800;font-size:13px;padding:4px 8px;border-radius:4px;">4%</div>
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">고데기</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 나노케어 고데기 (EH-HS0J)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 (2)</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">209,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">219,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-면도기.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/shaver/main.jpg" alt="파나소닉 람다쉬 전기면도기 (ES-L341)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">면도기</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 람다쉬 전기면도기 (ES-L341)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 (2)</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">169,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">189,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-구강세정기.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/oral/main.jpg" alt="파나소닉 휴대용 무선 구강세정기" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+            <div style="position:absolute;top:10px;left:10px;background:#E23B3B;color:#fff;font-weight:800;font-size:13px;padding:4px 8px;border-radius:4px;">7%</div>
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">구강세정기</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 휴대용 무선 구강세정기 (치아 치간 물치실)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 (1)</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">119,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">129,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-침구청소기.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/dustmite/main.png" alt="파나소닉 침구 청소기" style="width:100%;height:100%;object-fit:contain;object-position:50% 30%;display:block;">
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">생활가전</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 침구 청소기 (UV 살균)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 (3)</div>
+            <div style="display:flex;align-items:baseline;gap:6px;margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:14px;">7%</span><span style="color:#E23B3B;font-weight:700;font-size:14px;">129,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">139,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-드라이기2.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/dryer2/main2.jpg" alt="파나소닉 BLDC 헤어 드라이기 저소음 항공모터 초경량 음이온 정전기 미니" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">헤어드라이어</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 BLDC 헤어 드라이기 저소음 항공모터 초경량 음이온 정전기 미니</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 · 리뷰 0개</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:14px;">109,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">119,000원</div>
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-전동칫솔.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/toothbrush/main.jpg" alt="파나소닉 전동칫솔 (EW-DA48)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">구강케어</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 전동칫솔 (EW-DA48)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 · 리뷰 0개</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:700;font-size:14px;">15%</span> <span style="color:#E23B3B;font-size:16px;font-weight:800;">219,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">259,000원</div>
+
+          </div>
+        </div></a>
+
+        <a href="SensLink 상품상세-나노케어NA0K.dc.html" style="text-decoration:none;color:inherit;display:contents;"><div style="border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;background:#fff;">
+          <div style="position:relative;height:190px;overflow:hidden;background:#fff;">
+            <img src="assets/na0k/main.jpg" alt="파나소닉 나노케어 헤어드라이기 (EH-NA0K)" style="width:100%;height:100%;object-fit:contain;object-position:center;display:block;">
+            <div style="position:absolute;top:10px;left:10px;background:#E23B3B;color:#fff;font-weight:800;font-size:13px;padding:4px 8px;border-radius:4px;">14%</div>
+          </div>
+          <div style="padding:14px;">
+            <div style="font-size:11px;color:#6B7280;margin-bottom:4px;">헤어드라이어</div>
+            <div style="font-size:14px;font-weight:600;line-height:1.35;height:78px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;">파나소닉 나노케어 헤어드라이기 (EH-NA0K)</div>
+            <div style="font-size:12px;color:#F5A100;margin-top:6px;">★★★★★ 5.0 · 리뷰 0개</div>
+            <div style="margin-top:8px;"><span style="color:#E23B3B;font-weight:800;font-size:16px;">299,000원</span></div>
+            <div style="font-size:12px;color:#B0B0B0;text-decoration:line-through;">348,000원</div>
+          </div>
+        </div></a>
+
+      </div>
+
+      <div style="display:flex;justify-content:center;margin-top:48px;">
+        <div style="width:36px;height:36px;border-radius:6px;background:#0B2340;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;">1</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="background:#0B2340;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;color:#fff;">
+    <div style="font-size:14px;">더 많은 파나소닉 정품을 네이버 스마트스토어에서도 만나보세요.</div>
+    <a href="https://smartstore.naver.com/senslink" target="_blank" style="text-decoration:none;"><div style="background:#03C75A;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:6px;">스마트스토어 바로가기 ↗</div></a>
+  </div>
+
+  <div style="color:#8FA3C4;padding:48px 40px 30px;font-size:13px;line-height:1.9;background:linear-gradient(180deg,#193456,#0B2340);">
+    <div style="display:flex;gap:64px;justify-content:space-between;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <div style="background:#fff;display:inline-flex;padding:10px 16px;border-radius:8px;margin-bottom:16px;">
+          <img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:32px;width:auto;display:block;">
+        </div>
+        <div>센스링크는 파나소닉 공식 총판으로, 본사 인증을 받은 온라인 공식 인증 판매 스토어입니다.</div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">쇼핑</div>
+        <a href="SensLink 홈페이지.dc.html" style="color:inherit;text-decoration:none;display:block;">베스트 상품</a><a href="SensLink 전체상품.dc.html" style="color:inherit;text-decoration:none;display:block;">전체 상품</a><div>이벤트 상품</div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">고객지원</div>
+        <a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;display:block;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;display:block;">묻고 답하기</a><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;display:block;">센스링크 소개</a>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">사업자정보</div>
+        <div>상호명: 주식회사 센스링크</div>
+        <div>대표자: 장필상</div>
+        <div>사업자등록번호: 217-81-52202</div>
+        <div>통신판매업신고번호: 2026-서울강남-02086</div>
+        <div>고객센터: 02-1544-0344 · coopa18@naver.com</div>
+      </div>
+    </div>
+    <div style="margin-top:28px;padding-top:20px;border-top:1px solid #16294A;color:#5D7096;">© 2026 SensLink Co., Ltd. All rights reserved.</div>
+  </div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

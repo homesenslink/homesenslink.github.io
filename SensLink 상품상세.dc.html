@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet data-dc-atomics="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+body{margin:0;background:#EDEDEA;font-family:'Pretendard',system-ui,sans-serif;}
+a{color:#1D5FBF;}
+a:hover{color:#123B7A;}
+@media (max-width:900px){
+  .header-logo{width:100%!important;display:flex!important;justify-content:center!important;order:-1;}
+  .header-cta{display:none!important;}
+  .pd-img-col{width:100%!important;}
+  .pd-img-box{height:auto!important;aspect-ratio:1/1;}
+  div[style*="width:1440px;margin:0 auto"],div[style*="width: 1440px; margin: 0 auto"]{width:100%!important;box-shadow:none!important;}
+  div[style*="display:flex"],div[style*="display: flex"]{flex-wrap:wrap!important;}
+  div[style*="flex:none;width:520px"],div[style*="flex: none; width: 520px"],div[style*="flex:none;width:420px"],div[style*="flex: none; width: 420px"],div[style*="flex:none;width:380px"],div[style*="flex: none; width: 380px"],div[style*="width:520px;height:320px"],div[style*="width: 520px; height: 320px"]{width:100%!important;flex:none!important;height:auto!important;}
+  div[style*="max-width:900px"],div[style*="max-width: 900px"],div[style*="max-width:1100px"],div[style*="max-width: 1100px"],div[style*="max-width:860px"],div[style*="max-width: 860px"]{padding-left:16px!important;padding-right:16px!important;box-sizing:border-box;}
+  img{max-width:100%;}
+  div[style*="grid-template-columns:repeat(4"],div[style*="grid-template-columns: repeat(4"]{grid-template-columns:repeat(2,1fr)!important;}
+  div[style*="grid-template-columns:repeat(6"],div[style*="grid-template-columns: repeat(6"]{grid-template-columns:repeat(3,1fr)!important;}
+  div[style*="grid-template-columns:repeat(3"],div[style*="grid-template-columns: repeat(3"]{grid-template-columns:repeat(1,1fr)!important;}
+  div[style*="overflow:hidden;height:520px;position:relative"],div[style*="overflow: hidden; height: 520px; position: relative"]{height:auto!important;aspect-ratio:1/1;}
+  div[style*="border-radius:8px;overflow:hidden;height:78px"],div[style*="border-radius: 8px; overflow: hidden; height: 78px"]{height:auto!important;aspect-ratio:1/1;}
+  div[style*="padding:8px 40px"],div[style*="padding: 8px 40px"]{padding:8px 16px!important;gap:6px!important;font-size:10px!important;overflow-x:auto;white-space:nowrap;}
+  div[style*="padding:14px 40px"],div[style*="padding: 14px 40px"]{padding:12px 16px!important;gap:10px!important;}
+  div[style*="padding:16px 40px"],div[style*="padding: 16px 40px"]{padding:12px 16px!important;}
+  div[style*="padding:28px 40px"],div[style*="padding: 28px 40px"]{padding:20px 16px!important;}
+  div[style*="padding:56px 40px"],div[style*="padding: 56px 40px"]{padding:32px 16px!important;}
+  div[style*="padding:64px 40px"],div[style*="padding: 64px 40px"]{padding:36px 16px!important;}
+  div[style*="padding:80px 40px"],div[style*="padding: 80px 40px"]{padding:44px 16px!important;}
+  div[style*="padding:100px 40px"],div[style*="padding: 100px 40px"]{padding:48px 16px!important;}
+  div[style*="font-size:42px"],div[style*="font-size: 42px"]{font-size:26px!important;}
+  div[style*="font-size:38px"],div[style*="font-size: 38px"]{font-size:24px!important;}
+  div[style*="font-size:32px;font-weight:800;color:#0B2340"],div[style*="font-size: 32px; font-weight: 800; color: #0B2340"]{font-size:22px!important;}
+  div[style*="font-size:26px;font-weight:800"],div[style*="font-size: 26px; font-weight: 800"]{font-size:20px!important;}
+  div[style*="padding:14px 40px;display:flex;align-items:center;justify-content:space-between"],div[style*="padding: 14px 40px; display: flex; align-items: center; justify-content: space-between"]{flex-wrap:wrap!important;gap:10px!important;padding:12px 16px!important;justify-content:center!important;}
+  div[style*="display:flex;gap:32px;font-size:15px"],div[style*="display: flex; gap: 32px; font-size: 15px"]{gap:8px 14px!important;font-size:12px!important;flex-wrap:wrap!important;justify-content:center!important;}
+  a[style*="display:flex"],a[style*="display: flex"]{flex-wrap:wrap!important;}
+  div[style*="position:absolute"][style*="width:220"],div[style*="position: absolute"][style*="width: 220"]{display:none!important;}
+}
+</style>
+</helmet>
+
+<div style="width:1440px;max-width:100%;margin:0 auto;font-family:'Pretendard',system-ui,sans-serif;color:#16181D;background:#FAFAF8;box-shadow:0 0 40px rgba(0,0,0,.08);overflow-x:hidden;">
+
+  <div style="color:#C9D6EA;font-size:12px;padding:8px 40px;display:flex;justify-content:center;gap:24px;letter-spacing:.02em;background-color:#193456;">
+    <span>A/S Tel&nbsp; 1588-8452&nbsp; &nbsp; &nbsp; &nbsp;·&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;센스링크 고객센터&nbsp; 1544-0344</span>
+  </div>
+
+  <div style="background:#fff;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E7E7E2;">
+    <a href="SensLink 홈페이지.dc.html" class="header-logo" style="display:block;"><img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:38px;width:auto;display:block;"></a>
+    <div style="display:flex;gap:32px;font-size:15px;font-weight:600;color:#16181D;">
+      <a href="SensLink 홈페이지.dc.html" style="color:inherit;text-decoration:none;">베스트 상품</a><a href="SensLink 전체상품.dc.html" style="color:#1D5FBF;text-decoration:none;">전체 상품</a><span>이벤트 상품</span><a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;">묻고 답하기</a><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;">센스링크 소개</a>
+    </div>
+    <a href="SensLink 전체상품.dc.html" class="header-cta" style="text-decoration:none;"><div style="background:#0B2340;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:6px;">전체 상품 보기</div></a>
+  </div>
+
+  <div style="padding:16px 40px;font-size:13px;color:#9CA3AF;"><a href="SensLink 홈페이지.dc.html" style="color:#9CA3AF;text-decoration:none;">홈</a> <span style="margin:0 6px;">/</span> <a href="SensLink 전체상품.dc.html" style="color:#9CA3AF;text-decoration:none;">전체 상품</a> <span style="margin:0 6px;">/</span> 헤어드라이어 <span style="margin:0 6px;">/</span> <span style="color:#16181D;font-weight:600;">나노케어 헤어드라이기</span></div>
+
+  <div style="padding:0 40px 24px;display:flex;gap:56px;">
+
+    <div class="pd-img-col" style="flex:none;width:520px;">
+      <div class="pd-img-box" style="border:1px solid #E7E7E2;border-radius:12px;overflow:hidden;height:520px;position:relative;">
+        <img src="{{ activeImg }}" alt="파나소닉 나노케어 헤어드라이기 나노이 접이식 (EH-NA7M)" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;">
+        <div style="position:absolute;top:16px;left:16px;background:#E23B3B;color:#fff;font-weight:800;font-size:14px;padding:6px 12px;border-radius:6px;">25% OFF</div>
+        <img src="assets/medal-1st.png" alt="판매 1위" style="position:absolute;bottom:10px;right:10px;width:160px;height:auto;">
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;">
+        <div onClick="{{ thumb0 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive0 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
+          <img src="assets/eh-na7m-2.jpg" alt="정면 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div onClick="{{ thumb1 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive1 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
+          <img src="assets/detail/na7m-5.jpg" alt="측면 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div onClick="{{ thumb2 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive2 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
+          <img src="assets/detail/na7m-4.jpg" alt="구성품 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+        <div onClick="{{ thumb3 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive3 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
+          <img src="assets/detail/na7m-2.jpg" alt="사용 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:0;padding-top:4px;">
+      <div style="display:flex;gap:8px;margin-bottom:14px;">
+        <div style="background:#EDF3FC;color:#1D5FBF;font-size:11px;font-weight:700;padding:4px 10px;border-radius:4px;">정품 인증</div>
+      </div>
+      <div style="font-size:13px;color:#6B7280;margin-bottom:6px;">헤어드라이어 · EH-NA7M</div>
+      <div style="font-size:26px;font-weight:800;line-height:1.4;">파나소닉 나노케어 헤어드라이기 나노이 접이식 EH-NA7M</div>
+      <div style="display:flex;align-items:center;gap:10px;margin-top:12px;font-size:13px;color:#6B7280;">
+        <span style="color:#F5A100;">★★★★★</span><span>5.0</span><span>·</span><span>리뷰 8개</span>
+      </div>
+
+      <div style="margin-top:24px;padding:22px 0;border-top:1px solid #EDEDEA;border-bottom:1px solid #EDEDEA;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="background:#FDEEEE;color:#E23B3B;font-weight:800;font-size:15px;padding:2px 8px;border-radius:4px;">25%</span>
+          <span style="font-size:15px;color:#B0B0B0;text-decoration:line-through;">179,000원</span>
+        </div>
+        <div style="font-size:32px;font-weight:800;color:#16181D;margin-top:6px;">133,200원</div>
+        <div style="font-size:12px;color:#9CA3AF;margin-top:6px;">무이자할부 가능 · 오늘 주문 시 내일 도착 예정</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;">
+        <div style="border:1px solid #E7E7E2;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:13px;font-weight:700;">정품 인증</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-top:3px;">본사 인증 판매처</div>
+        </div>
+        <div style="border:1px solid #E7E7E2;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:13px;font-weight:700;">A/S 1년</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-top:3px;">구매 후 무상 보증</div>
+        </div>
+        <div style="border:1px solid #E7E7E2;border-radius:8px;padding:14px;text-align:center;">
+          <div style="font-size:13px;font-weight:700;">전국 23개 센터</div>
+          <div style="font-size:11px;color:#9CA3AF;margin-top:3px;">빠른 서비스망</div>
+        </div>
+      </div>
+
+      <div style="margin-top:28px;display:flex;align-items:center;justify-content:space-between;border:1px solid #E7E7E2;border-radius:8px;padding:14px 18px;">
+        <div style="font-size:14px;font-weight:600;">수량</div>
+        <div style="display:flex;align-items:center;gap:16px;">
+          <div style="width:28px;height:28px;border:1px solid #E7E7E2;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6B7280;">–</div>
+          <div style="font-size:15px;font-weight:700;">1</div>
+          <div style="width:28px;height:28px;border:1px solid #E7E7E2;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#6B7280;">+</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:12px;margin-top:20px;">
+        <div style="flex:1;background:#fff;border:1px solid #0B2340;color:#0B2340;font-weight:700;font-size:15px;padding:16px;border-radius:8px;text-align:center;">장바구니</div>
+        <a href="https://smartstore.naver.com/senslink/products/13371408022" target="_blank" style="flex:2;text-decoration:none;"><div style="background:#E23B3B;color:#fff;font-weight:700;font-size:15px;padding:16px;border-radius:8px;text-align:center;">바로 구매하기</div></a>
+      </div>
+
+      <div style="margin-top:20px;background:#EDF3FC;border-radius:8px;padding:16px 18px;font-size:12.5px;color:#1D5FBF;line-height:1.7;">
+        본 상품은 파나소닉 본사 인증을 받은 정품이며, 정품 인증서가 함께 제공됩니다. 비공식 판매처의 가품 위험 없이 안심하고 구매하세요.
+      </div>
+    </div>
+
+  </div>
+
+  <div style="padding:56px 40px;">
+    <div style="display:flex;gap:32px;border-bottom:2px solid #EDEDEA;font-size:16px;font-weight:700;color:#9CA3AF;">
+      <div style="padding:14px 4px;color:#0B2340;border-bottom:2px solid #0B2340;margin-bottom:-2px;">상품 정보</div>
+      <a href="#reviews-section" style="padding:14px 4px;color:inherit;text-decoration:none;">리뷰 (8)</a>
+      <div style="padding:14px 4px;">문의 (0)</div>
+    </div>
+
+    <div style="max-width:860px;margin:0 auto 40px;text-align:center;">
+      <div style="font-size:32px;font-weight:800;color:#0B2340;line-height:1.4;">일본 헤어 드라이어 출하 대수<br><span style="color:#E23B3B;">14년 연속 1위 달성!</span></div>
+      <img src="assets/badge-no1-full-stats.png" alt="가정용 헤어드라이어 국내 출하 대수 14년 연속 No.1 통계" style="width:100%;max-width:820px;margin-top:24px;display:block;">
+    </div>
+
+    <div style="max-width:860px;margin:0 auto 40px;">
+      <div style="font-size:22px;font-weight:800;color:#0B2340;text-align:center;margin-bottom:20px;">실제 사용 스타일링 가이드</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7E2;"><img src="assets/detail/na7m-usage-1.gif" alt="드라이는 강하게 힘 안줘도" style="width:100%;display:block;"></div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7E2;"><img src="assets/detail/na7m-usage-2.gif" alt="모발 탄력도 살면서 끝이 촉촉하게 정리돼요" style="width:100%;display:block;"></div>
+        <div style="border-radius:12px;overflow:hidden;border:1px solid #E7E7E2;"><img src="assets/detail/na7m-usage-3.gif" alt="위에서 아래로 결정리하듯 말려주기" style="width:100%;display:block;"></div>
+      </div>
+    </div>
+
+    <div style="max-width:860px;margin:0 auto 8px;">
+      <img src="assets/detail/d01.jpg" alt="상세페이지 1" style="width:100%;display:block;">
+      <img src="assets/detail/d02.jpg" alt="상세페이지 2" style="width:100%;display:block;">
+      <img src="assets/detail/d03.jpg" alt="상세페이지 3" style="width:100%;display:block;">
+      <img src="assets/detail/d04.jpg" alt="상세페이지 4" style="width:100%;display:block;">
+      <img src="assets/detail/d05.jpg" alt="상세페이지 5" style="width:100%;display:block;">
+      <img src="assets/detail/d06.jpg" alt="상세페이지 6" style="width:100%;display:block;">
+      <img src="assets/detail/d07.jpg" alt="상세페이지 7" style="width:100%;display:block;">
+      <img src="assets/detail/d08.jpg" alt="상세페이지 8" style="width:100%;display:block;">
+      <img src="assets/detail/d09.jpg" alt="상세페이지 9" style="width:100%;display:block;">
+      <img src="assets/detail/d10.jpg" alt="상세페이지 10" style="width:100%;display:block;">
+      <img src="assets/detail/d11.jpg" alt="상세페이지 11" style="width:100%;display:block;">
+      <img src="assets/detail/d12.jpg" alt="상세페이지 12" style="width:100%;display:block;">
+      <img src="assets/detail/d13.jpg" alt="상세페이지 13" style="width:100%;display:block;">
+      <img src="assets/detail/d14.jpg" alt="상세페이지 14" style="width:100%;display:block;">
+      <img src="assets/detail/d15.jpg" alt="상세페이지 15" style="width:100%;display:block;">
+      <img src="assets/detail/d16.jpg" alt="상세페이지 16" style="width:100%;display:block;">
+      <img src="assets/detail/d17.jpg" alt="상세페이지 17" style="width:100%;display:block;">
+      <img src="assets/detail/d18.jpg" alt="상세페이지 18" style="width:100%;display:block;">
+      <img src="assets/detail/d19.jpg" alt="상세페이지 19" style="width:100%;display:block;">
+      <img src="assets/detail/d20.jpg" alt="상세페이지 20" style="width:100%;display:block;">
+      <img src="assets/detail/d21.jpg" alt="상세페이지 21" style="width:100%;display:block;">
+      <img src="assets/detail/d22.jpg" alt="상세페이지 22" style="width:100%;display:block;">
+      <img src="assets/detail/d23.png" alt="상세페이지 23" style="width:100%;display:block;">
+      <img src="assets/detail/d24.png" alt="상세페이지 24" style="width:100%;display:block;">
+    </div>
+
+    <div style="padding:40px 0;display:grid;grid-template-columns:1fr 340px;gap:48px;">
+      <div>
+        <div style="font-size:18px;font-weight:800;margin-bottom:14px;">상품 정보 고시</div>
+        <div style="border-top:1px solid #E7E7E2;">
+          <div style="display:flex;border-bottom:1px solid #E7E7E2;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">제조사</div><div style="padding:14px 0;font-size:13px;">파나소닉(Panasonic)</div></div>
+          <div style="display:flex;border-bottom:1px solid #E7E7E2;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">모델명</div><div style="padding:14px 0;font-size:13px;">EH-NA7M</div></div>
+          <div style="display:flex;border-bottom:1px solid #E7E7E2;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">정품 여부</div><div style="padding:14px 0;font-size:13px;">파나소닉 본사 인증 정품</div></div>
+          <div style="display:flex;border-bottom:1px solid #E7E7E2;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">구성품</div><div style="padding:14px 0;font-size:13px;">본체, 디퓨저, 사용설명서, 정품 인증서</div></div>
+          <div style="display:flex;border-bottom:1px solid #E7E7E2;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">A/S 안내</div><div style="padding:14px 0;font-size:13px;">구매일로부터 1년 무상 A/S · 전국 27개 서비스센터</div></div>
+          <div style="display:flex;"><div style="width:160px;padding:14px 0;font-size:13px;color:#6B7280;">판매원</div><div style="padding:14px 0;font-size:13px;">주식회사 센스링크</div></div>
+        </div>
+      </div>
+
+      <div>
+        <div style="border:1px solid #E7E7E2;border-radius:10px;padding:22px;background:#fff;">
+          <div style="font-size:15px;font-weight:800;margin-bottom:14px;">함께 보면 좋은 상품</div>
+          <a href="SensLink 상품상세-에어스타일러.dc.html" style="text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #F0F0EE;">
+            <div style="width:56px;height:56px;flex:none;border-radius:6px;overflow:hidden;"><img src="assets/airstyler/main.jpg" alt="5in1 멀티 헤어 스타일러" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;"></div>
+            <div><div style="font-size:13px;font-weight:600;">5in1 멀티 헤어 스타일러</div><div style="font-size:13px;font-weight:800;margin-top:2px;">259,000원</div></div>
+          </a>
+          <a href="SensLink 상품상세-고데기.dc.html" style="text-decoration:none;color:inherit;display:flex;gap:12px;align-items:center;padding:10px 0;">
+            <div style="width:56px;height:56px;flex:none;border-radius:6px;overflow:hidden;"><img src="assets/curler/main.jpg" alt="고데기 앞머리 볼륨 매직기" style="width:100%;height:100%;object-fit:contain;display:block;background:#fff;"></div>
+            <div><div style="font-size:13px;font-weight:600;">고데기 앞머리 볼륨 매직기</div><div style="font-size:13px;font-weight:800;margin-top:2px;">209,000원</div></div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;" id="reviews-section">
+      <div style="font-size:18px;font-weight:800;margin-bottom:20px;">실사용 고객 리뷰</div>
+
+      <div style="display:flex;align-items:center;gap:48px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:28px;margin-bottom:20px;">
+        <div style="text-align:center;flex:none;">
+          <div style="color:#E23B3B;font-size:26px;font-weight:800;">★ 5.0</div>
+          <div style="font-size:12px;color:#9CA3AF;margin-top:4px;">(최근 6개월 평점 5.0)</div>
+        </div>
+        <div style="display:flex;gap:28px;">
+          <div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:#E23B3B;">8건</div><div style="width:2px;height:36px;background:#E23B3B;margin:6px auto;"></div><div style="font-size:12px;color:#6B7280;">5점<br>(최고예요)</div></div>
+          <div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:#9CA3AF;">0건</div><div style="width:2px;height:36px;background:#E7E7E2;margin:6px auto;"></div><div style="font-size:12px;color:#6B7280;">4점<br>(좋아요)</div></div>
+          <div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:#9CA3AF;">0건</div><div style="width:2px;height:36px;background:#E7E7E2;margin:6px auto;"></div><div style="font-size:12px;color:#6B7280;">3점<br>(괜찮아요)</div></div>
+          <div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:#9CA3AF;">0건</div><div style="width:2px;height:36px;background:#E7E7E2;margin:6px auto;"></div><div style="font-size:12px;color:#6B7280;">2점<br>(그저그래요)</div></div>
+          <div style="text-align:center;"><div style="font-size:13px;font-weight:700;color:#9CA3AF;">0건</div><div style="width:2px;height:36px;background:#E7E7E2;margin:6px auto;"></div><div style="font-size:12px;color:#6B7280;">1점<br>(별로예요)</div></div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+        <div style="background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:22px;">
+          <div style="color:#F5A100;font-size:13px;">★★★★★</div>
+          <div style="font-size:14px;line-height:1.7;margin-top:10px;color:#333;">"정품 인증서랑 같이 와서 안심하고 샀어요. 배송도 빠르고 A/S 설명도 자세히 해주셨습니다."</div>
+          <div style="font-size:12px;color:#9CA3AF;margin-top:12px;">구매자 김**</div>
+        </div>
+        <div style="background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:22px;">
+          <div style="color:#F5A100;font-size:13px;">★★★★★</div>
+          <div style="font-size:14px;line-height:1.7;margin-top:10px;color:#333;">"머리가 덜 상하는 느낌이에요. 접이식이라 여행 갈 때도 챙기기 편합니다."</div>
+          <div style="font-size:12px;color:#9CA3AF;margin-top:12px;">구매자 이**</div>
+        </div>
+        <div style="background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:22px;">
+          <div style="color:#F5A100;font-size:13px;">★★★★★</div>
+          <div style="font-size:14px;line-height:1.7;margin-top:10px;color:#333;">"타 판매처보다 저렴한데 정품이라 더 믿음이 갔어요. 재구매 의사 있습니다."</div>
+          <div style="font-size:12px;color:#9CA3AF;margin-top:12px;">구매자 박**</div>
+        </div>
+      </div>
+
+      <div style="margin-top:18px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#EDEDEA;flex:none;"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;"><span style="color:#F5A100;">★</span><span>5</span></div>
+            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">fond**** · 26.06.08 · 신고</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-top:10px;">파나소닉 나노이 접이식 드라이기: EH-NA7M</div>
+        <div style="display:inline-block;background:#F4F4F2;color:#4B4B4B;font-size:13px;padding:6px 12px;border-radius:6px;margin-top:10px;">건조성능 좋아요</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;max-width:620px;">
+          <div style="position:relative;border-radius:8px;overflow:hidden;">
+            <img src="assets/reviews/na7m-fond-before.jpg" alt="사용 전" style="width:100%;display:block;">
+            <div style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:3px 8px;border-radius:4px;">💬 사용 전</div>
+          </div>
+          <div style="position:relative;border-radius:8px;overflow:hidden;">
+            <img src="assets/reviews/na7m-fond-after.jpg" alt="사용 후" style="width:100%;display:block;">
+            <div style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:3px 8px;border-radius:4px;">💬 사용 후</div>
+          </div>
+          <div style="position:relative;border-radius:8px;overflow:hidden;">
+            <img src="assets/reviews/na7m-fond-grip.jpg" alt="그립감 굿" style="width:100%;display:block;">
+            <div style="position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.6);color:#fff;font-size:11px;padding:3px 8px;border-radius:4px;">💬 그립감 굿</div>
+          </div>
+        </div>
+        <div style="font-size:14px;line-height:1.8;color:#333;margin-top:14px;">
+          출근 전에 머리 말릴 시간이 부족해서 구매했는데 만족해요&gt;&lt;<br><br>
+          일단 터보 모드가 진짜 강해서 물기가 금방 말라요 머리술 많은 편인데도 예전보다 훨씬 빨리 끝나더라고요 신기한 건 엄청 빨리 마르는데도 머리가 푸석푸석하지 않고 촉촉하고 차분하게 정리돼요<br><br>
+          저는 터보 모드로 먼저 대충 물기 날리고 열보호 모드로 앞머리랑 옆머리 스타일링하면서 마무리하는데 딱 좋았어요!<br><br>
+          사실 다른 리뷰 보고 무게 때문에 살짝 고민했는데 막상 써보니 운동 일절 안 하는 제 유리 손목으로도 거뜬하네요 오히려 나노이 기술? 덕분에 머릿결이 훨씬 차분해지는 게 느껴져서 구매하길 너무 잘한 것 같아요 ㅎㅎ<br><br>
+          아침마다 출근 준비하느라 바쁜 직장인이라면 만족할 제품이에요 추전합니당 ~~!!!
+        </div>
+      </div>
+
+      <div style="margin-top:18px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#EDEDEA;flex:none;"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;"><span style="color:#F5A100;">★</span><span>5</span></div>
+            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">rjsg***** · 26.06.10 · 신고</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-top:10px;">파나소닉 나노이 접이식 드라이기: EH-NA7M</div>
+        <div style="display:inline-block;background:#F4F4F2;color:#4B4B4B;font-size:13px;padding:6px 12px;border-radius:6px;margin-top:10px;">건조성능 좋아요</div>
+        <div style="font-size:14px;line-height:1.8;color:#333;margin-top:14px;">
+          원래 쓰던 드라이기는 온도 조절이 안 돼서 옆머리 누를 때마다 두피가 뜨거웠는데, 이 제품은 열 보호 모드가 있어서 부담 없이 사용할 수 있네요.<br><br>
+          평소 부스스하게 뜨는 머리도 집중 노즐로 정리하면 차분하게 잘 정리되고, 며칠 써 보니 머릿결도 한결 정돈된 느낌입니다. 무게도 생각보다 무겁게 느껴지지 않았고요.<br><br>
+          여자친구 추천으로 구매했는데 왜 추천했는지 알겠네요. 저렴한 드라이기로는 다시 못 돌아갈 것 같고, 진작 알았으면 좋았을 제품입니다. 어머니께도 하나 선물해 드려야겠어요.
+        </div>
+        <img src="assets/reviews/na7m-rjsg-strip.jpg" alt="rjsg***** 리뷰 사진" style="width:100%;max-width:620px;border-radius:8px;margin-top:14px;display:block;">
+      </div>
+
+      <div style="margin-top:18px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#EDEDEA;flex:none;"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;"><span style="color:#F5A100;">★</span><span>5</span></div>
+            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">ruir******* · 26.07.03 · 신고</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-top:10px;">파나소닉 나노이 접이식 드라이기: EH-NA7M</div>
+        <div style="display:inline-block;background:#F4F4F2;color:#4B4B4B;font-size:13px;padding:6px 12px;border-radius:6px;margin-top:10px;">건조성능 좋아요</div>
+        <div style="font-size:14px;line-height:1.8;color:#333;margin-top:14px;">색상도 이쁘고, 성능도 좋아서 맘에 들어요~!!</div>
+        <img src="assets/reviews/na7m-ruir.jpg" alt="ruir******* 리뷰 사진" style="width:180px;border-radius:8px;margin-top:14px;display:block;">
+      </div>
+
+      <div style="margin-top:18px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#EDEDEA;flex:none;"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;"><span style="color:#F5A100;">★</span><span>5</span><span style="background:#EDF3FC;color:#1D5FBF;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px;margin-left:4px;">한달사용</span></div>
+            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">tpki**** · 26.06.16 · 신고</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-top:10px;">파나소닉 나노이 접이식 드라이기: EH-NA7M</div>
+        <div style="display:inline-block;background:#F4F4F2;color:#4B4B4B;font-size:13px;padding:6px 12px;border-radius:6px;margin-top:10px;">건조성능 좋아요</div>
+        <div style="font-size:14px;line-height:1.8;color:#333;margin-top:14px;">와 진짜 좋아요!!<br>몸 말릴때도 머리 마릴때도!<br>크기도 적당해요</div>
+        <img src="assets/reviews/na7m-tpki0616.jpg" alt="tpki**** 리뷰 사진" style="width:180px;border-radius:8px;margin-top:14px;display:block;">
+      </div>
+
+      <div style="margin-top:18px;background:#fff;border:1px solid #E7E7E2;border-radius:10px;padding:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;border-radius:50%;background:#EDEDEA;flex:none;"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;"><span style="color:#F5A100;">★</span><span>5</span></div>
+            <div style="font-size:12px;color:#9CA3AF;margin-top:2px;">tpki**** · 26.05.08 · 신고</div>
+          </div>
+        </div>
+        <div style="font-size:12px;color:#6B7280;margin-top:10px;">파나소닉 나노이 접이식 드라이기: EH-NA7M</div>
+        <div style="display:inline-block;background:#F4F4F2;color:#4B4B4B;font-size:13px;padding:6px 12px;border-radius:6px;margin-top:10px;">건조성능 좋아요</div>
+        <div style="font-size:14px;line-height:1.8;color:#333;margin-top:14px;">기존 드라이기가 고장나서 샀는데<br>바람이 완전쎄고 크기도 적당해서 좋아요!</div>
+        <img src="assets/reviews/na7m-tpki0508.jpg" alt="tpki**** 리뷰 사진" style="width:180px;border-radius:8px;margin-top:14px;display:block;">
+      </div>
+    </div>
+  </div>
+
+  <div style="background:#0B2340;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;color:#fff;">
+    <div style="font-size:14px;">더 많은 파나소닉 정품을 네이버 스마트스토어에서도 만나보세요.</div>
+    <a href="https://smartstore.naver.com/senslink" target="_blank" style="text-decoration:none;"><div style="background:#03C75A;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:6px;">스마트스토어 바로가기 ↗</div></a>
+  </div>
+
+  <div style="color:#8FA3C4;padding:48px 40px 30px;font-size:13px;line-height:1.9;background:linear-gradient(180deg,#193456,#0B2340);">
+    <div style="display:flex;gap:64px;justify-content:space-between;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <div style="background:#fff;display:inline-flex;padding:10px 16px;border-radius:8px;margin-bottom:16px;">
+          <img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:32px;width:auto;display:block;">
+        </div>
+        <div>센스링크는 파나소닉 공식 총판으로, 본사 인증을 받은 온라인 공식 인증 판매 스토어입니다.</div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">쇼핑</div>
+        <a href="SensLink 홈페이지.dc.html" style="color:inherit;text-decoration:none;display:block;">베스트 상품</a><a href="SensLink 전체상품.dc.html" style="color:inherit;text-decoration:none;display:block;">전체 상품</a><div>이벤트 상품</div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">고객지원</div>
+        <a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;display:block;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;display:block;">묻고 답하기</a><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;display:block;">센스링크 소개</a>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">사업자정보</div>
+        <div>상호명: 주식회사 센스링크</div>
+        <div>대표자: 장필상</div>
+        <div>사업자등록번호: 217-81-52202</div>
+        <div>통신판매업신고번호: 2026-서울강남-02086</div>
+        <div>고객센터: 02-1544-0344 · coopa18@naver.com</div>
+      </div>
+    </div>
+    <div style="margin-top:28px;padding-top:20px;border-top:1px solid #16294A;color:#5D7096;">© 2026 SensLink Co., Ltd. All rights reserved.</div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { activeImg: 'assets/eh-na7m-2.jpg' };
+  renderVals() {
+    const set = (src) => () => this.setState({ activeImg: src });
+    return {
+      activeImg: this.state.activeImg,
+      thumb0: set('assets/eh-na7m-2.jpg'),
+      thumb1: set('assets/detail/na7m-5.jpg'),
+      thumb2: set('assets/detail/na7m-4.jpg'),
+      thumb3: set('assets/detail/na7m-2.jpg'),
+      isActive0: this.state.activeImg === 'assets/eh-na7m-2.jpg' ? '#1D5FBF' : '#E7E7E2',
+      isActive1: this.state.activeImg === 'assets/detail/na7m-5.jpg' ? '#1D5FBF' : '#E7E7E2',
+      isActive2: this.state.activeImg === 'assets/detail/na7m-4.jpg' ? '#1D5FBF' : '#E7E7E2',
+      isActive3: this.state.activeImg === 'assets/detail/na7m-2.jpg' ? '#1D5FBF' : '#E7E7E2'
+    };
+  }
+}
+</script>
+</body>
+</html>
