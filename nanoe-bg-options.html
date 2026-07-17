@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<style>
+body{margin:0;background:#EDEDEA;font-family:system-ui,sans-serif;padding:40px;display:flex;gap:32px;flex-wrap:wrap;}
+.card{width:420px;}
+.label{font-weight:700;margin-bottom:10px;font-size:15px;color:#0B2340;}
+.box{width:420px;height:320px;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25);}
+video{width:100%;height:100%;object-fit:cover;object-position:center;display:block;position:relative;z-index:1;}
+.badge{position:absolute;top:6px;left:15px;background:#E23B3B;color:#fff;font-weight:800;font-size:28px;width:92px;height:92px;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1.1;text-align:center;z-index:3;}
+.tag{position:absolute;bottom:20px;left:20px;background:#E23B3B;color:#fff;font-weight:800;font-size:22px;padding:10px 18px;border-radius:8px;z-index:3;}
+.overlay{position:absolute;inset:0;z-index:2;pointer-events:none;}
+/* Variant 1: soft blue radial mist wash, multiply blend so product stays visible */
+.v1 .overlay{background:radial-gradient(circle at 70% 25%, rgba(120,170,240,.35), rgba(60,110,200,.15) 55%, rgba(20,60,140,.25) 100%);mix-blend-mode:multiply;}
+/* Variant 2: cool blue-gray gradient wash top-to-bottom, like nanoe mist settling */
+.v2 .overlay{background:linear-gradient(160deg, rgba(80,140,230,.28), rgba(200,225,250,.05) 45%, rgba(40,90,180,.22));mix-blend-mode:multiply;}
+/* Variant 3: droplet glow bokeh - soft blurred blue circles + light wash */
+.v3 .overlay{background:radial-gradient(circle at 78% 78%, rgba(140,190,255,.5), transparent 30%), radial-gradient(circle at 15% 20%, rgba(180,210,255,.4), transparent 25%), linear-gradient(135deg, rgba(90,150,230,.18), rgba(30,80,170,.15));mix-blend-mode:multiply;}
+/* Variant 4: animated drifting nanoe bubbles in the backdrop behind the box */
+.card.v4{background:linear-gradient(160deg,#EAF2FF,#D8E8FB);border-radius:16px;padding:24px;position:relative;overflow:hidden;}
+.bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.9), rgba(140,190,255,.55) 60%, rgba(90,150,230,.25));filter:blur(1px);animation:drift 9s ease-in-out infinite;}
+.b1{width:70px;height:70px;left:8%;top:15%;animation-duration:8s;}
+.b2{width:40px;height:40px;left:80%;top:20%;animation-duration:11s;animation-delay:1s;}
+.b3{width:55px;height:55px;left:70%;top:75%;animation-duration:9.5s;animation-delay:2s;}
+.b4{width:30px;height:30px;left:12%;top:78%;animation-duration:7s;animation-delay:.5s;}
+.b5{width:22px;height:22px;left:45%;top:8%;animation-duration:10s;animation-delay:1.5s;}
+@keyframes drift{0%,100%{transform:translateY(0) translateX(0);}50%{transform:translateY(-18px) translateX(10px);}}
+</style></head>
+<body>
+<div class="card v1">
+  <div class="label">1안 · 라디얼 블루 미스트</div>
+  <div class="box"><video src="assets/eh-na7m-360.mp4" autoplay muted loop playsinline></video><div class="overlay"></div>
+    <div class="badge">25%<br>OFF</div><div class="tag">日本 14年 連續&nbsp; 1位</div></div>
+</div>
+<div class="card v2">
+  <div class="label">2안 · 세로 그라디언트 워시</div>
+  <div class="box"><video src="assets/eh-na7m-360.mp4" autoplay muted loop playsinline></video><div class="overlay"></div>
+    <div class="badge">25%<br>OFF</div><div class="tag">日本 14年 連續&nbsp; 1位</div></div>
+</div>
+<div class="card v3">
+  <div class="label">3안 · 물방울 보케 글로우</div>
+  <div class="box"><video src="assets/eh-na7m-360.mp4" autoplay muted loop playsinline></video><div class="overlay"></div>
+    <div class="badge">25%<br>OFF</div><div class="tag">日本 14年 連續&nbsp; 1位</div></div>
+</div>
+<div class="card v4">
+  <div class="label">4안 · 움직이는 나노이 물방울 배경</div>
+  <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div><div class="bubble b4"></div><div class="bubble b5"></div>
+  <div class="box" style="position:relative;z-index:1;"><video src="assets/eh-na7m-360.mp4" autoplay muted loop playsinline></video>
+    <div class="badge">25%<br>OFF</div><div class="tag">日本 14年 連續&nbsp; 1位</div></div>
+</div>
+</body></html>
