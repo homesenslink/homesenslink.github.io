@@ -41,6 +41,9 @@ a:hover{color:#123B7A;}
   div[style*="display:flex;gap:32px;font-size:15px"],div[style*="display: flex; gap: 32px; font-size: 15px"]{gap:8px 14px!important;font-size:12px!important;flex-wrap:wrap!important;justify-content:center!important;}
   a[style*="display:flex"],a[style*="display: flex"]{flex-wrap:wrap!important;}
   div[style*="position:absolute"][style*="width:220"],div[style*="position: absolute"][style*="width: 220"]{display:none!important;}
+  .about-cols{flex-direction:column!important;gap:36px!important;}
+  .about-col{flex:none!important;width:100%!important;}
+  .biz-card{padding:22px 16px!important;}
 }
 </style>
 </helmet>
@@ -78,15 +81,17 @@ a:hover{color:#123B7A;}
   </div>
 
   <div style="background:#EDF3FC;padding:80px 40px;">
-    <div style="max-width:1100px;margin:0 auto;display:flex;gap:56px;align-items:flex-start;">
-      <div style="flex:1;">
+    <div class="about-cols" style="max-width:1100px;margin:0 auto;display:flex;gap:56px;align-items:flex-start;">
+      <div class="about-col" style="flex:1;">
         <div style="font-size:22px;font-weight:800;margin-bottom:24px;">사업자정보</div>
-        <div style="background:#0B2340;border-radius:12px;padding:28px 32px;color:#fff;font-size:14px;line-height:2;">
-          <div>상호명:&nbsp; 주식회사 센스링크&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;·&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 대표자: 장필상&nbsp; (010-5456-8885)</div>
-          <div>사업자등록번호:&nbsp; 217-81-52202</div>
-          <div>통신판매업신고번호:&nbsp; 2026-서울강남-02086</div>
-          <div>고객센터:&nbsp; 02-1544-0344&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;·&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; E-mail: coopa18@naver.com</div>
-          <div style="color: #FFFFFF">홈페이지: https://homesenslink.github.io/</div>
+        <div class="biz-card" style="background:#0B2340;border-radius:12px;padding:28px 32px;color:#fff;font-size:14px;line-height:2;text-align:center;">
+          <div>상호명: 주식회사 센스링크</div>
+          <div>대표자: 장필상 (010-5456-8885)</div>
+          <div>사업자등록번호: 217-81-52202</div>
+          <div>통신판매업신고번호: 2026-서울강남-02086</div>
+          <div>고객센터: 02-1544-0344</div>
+          <div>E-mail: coopa18@naver.com</div>
+          <div style="color:#FFFFFF;word-break:break-all;">홈페이지: https://homesenslink.github.io/</div>
         </div>
         <a href="index.html" style="display:flex;align-items:center;justify-content:center;margin-top:20px;text-decoration:none;">
           <img src="assets/senslink-ci-panasonic.png" alt="센스링크 Powered by Panasonic" style="width:100%;max-width:520px;display:block;">
@@ -109,7 +114,7 @@ a:hover{color:#123B7A;}
     <div style="font-size:14px;color:#6B7280;margin-top:16px;">체계적인 정품 재고 관리로 빠르고 안전한 배송을 약속드립니다.</div>
   </div>
 
-  <div style="background:#0B2340;padding:28px 40px;display:flex;align-items:center;justify-content:space-between;color:#fff;">
+  <div style="background:#0B2340;padding:28px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;color:#fff;">
     <div style="font-size:14px;">더 많은 파나소닉 정품을 네이버 스마트스토어에서도 만나보세요.</div>
     <a href="https://smartstore.naver.com/senslink" target="_blank" style="text-decoration:none;"><div style="background:#03C75A;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:6px;">스마트스토어 바로가기 ↗</div></a>
   </div>
