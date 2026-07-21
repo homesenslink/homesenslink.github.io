@@ -100,7 +100,7 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
     </div>
     <div class="hero-copy" style="flex:1;min-width:0;">
       
-      <div style="font-size:44px;font-weight:800;line-height:1.25;color:#fff;letter-spacing:-.02em;"><span style="font-weight: normal;">일본 2천만대 판매&nbsp;</span><br><span style="font-weight: normal; color: rgb(226, 59, 59);"><img src="assets/japan-badge-red.png" alt="日本" style="height:0.85em;width:auto;vertical-align:-0.12em;display:inline-block;margin-right:6px;animation:badgeFlip .5s steps(1) infinite alternate;">
+      <div style="font-size:44px;font-weight:800;line-height:1.25;color:#fff;letter-spacing:-.02em;"><span style="font-weight: normal;">일본 2천만대 판매&nbsp;</span><br><span style="font-weight: normal; color: rgb(226, 59, 59);"><img src="assets/japan-badge-red.png" alt="日本" style="height:0.85em;width:auto;vertical-align:-0.12em;display:inline-block;margin-right:6px;">
 <u style="font-family: 'Pretendard', system-ui, sans-serif; text-decoration-line: none; font-weight: 400; text-transform: none; letter-spacing: -0.04em;">14년 연속 판매 1위</u></span></div><div class="hero-desc" style="font-size: 16px; color: #fff; line-height: 1.6; margin-top: 20px; max-width: 460px; font-family: 'Pretendard', system-ui, sans-serif"><b style="background-color: #E51016">파나소닉 나노이 케어 헤어드라이어와 생활가전에 이르기까지 <br>정품 인증을 보증하며 14년간 일본 1위 제품과 만나보세요.</b></div>
       <div style="display:flex;gap:12px;margin-top:32px;">
         <a href="SensLink 전체상품.dc.html" style="text-decoration:none;"><div style="background:#E23B3B;color:#fff;font-weight:700;font-size:12px;padding:11px 22px;border-radius:5px;" style-hover="background:#C42E2E;">전체 상품<span class="btn-suffix"> 보기</span></div></a>
@@ -113,11 +113,14 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
       <div class="hero-media-box" style="width:420px;height:320px;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25);cursor:pointer;">
         <video src="assets/eh-na7m-360.mp4" ref="{{ heroVideoRef }}" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block"></video>
         <img src="assets/panasonic-logo.png" alt="Panasonic" style="position:absolute;top:12px;right:14px;width:110px;height:auto;z-index:4;pointer-events:none;">
+        <div id="heroPlayBtn" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:5;cursor:pointer;background:rgba(0,0,0,0.12);">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;font-size:24px;color:#0B2340;padding-left:5px;box-shadow:0 4px 14px rgba(0,0,0,0.25);">▶</div>
+        </div>
         <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 78% 78%, rgba(140,190,255,.5), transparent 30%), radial-gradient(circle at 15% 20%, rgba(180,210,255,.4), transparent 25%), linear-gradient(135deg, rgba(90,150,230,.18), rgba(30,80,170,.15));mix-blend-mode:multiply;"></div>
         <div style="position: absolute; top: 6px; background: #E23B3B; color: #fff; font-weight: 800; font-size: 28px; width: 92px; height: 92px; border-radius: 50%; display: flex; align-items: center; justify-content: center; line-height: 1.1; text-align: center; left: 15px; animation: badgeShine 1.6s ease-in-out infinite;">25%<br>OFF</div>
         <img src="assets/badge-no1-14years-wide.png" alt="국내출하대수 14년연속 No.1" style="position:absolute;bottom:14px;left:14px;width:175px;height:auto;border-radius:6px;box-shadow:0 4px 10px rgba(0,0,0,.25);">
         <div style="display:none;">日本 14年 連續&nbsp; 1位</div>
-        <img src="assets/medal-1st.png" alt="판매 1위" style="position: absolute; bottom: 6px; right: 6px; width: 135px; height: auto;">
+        <img src="assets/medal-1st.png" alt="판매 1위" style="position: absolute; bottom: 6px; right: 6px; width: 26%; max-width: 135px; height: auto;">
       </div>
       <div style="text-align:center;margin-top:14px;font-size:16px;font-weight:700;color:#fff;letter-spacing:.02em;">EH-NA7M</div>
     </a>
@@ -357,12 +360,21 @@ class Component extends DCLogic {
         el.loop = true;
         el.setAttribute('playsinline', '');
         el.setAttribute('webkit-playsinline', '');
-        const tryPlay = () => el.play().catch(() => {});
+        const tryPlay = () => { el.muted = true; el.play().catch(() => {}); };
         tryPlay();
         el.addEventListener('loadedmetadata', tryPlay);
         el.addEventListener('canplay', tryPlay);
         document.addEventListener('touchend', tryPlay, { once: true });
         document.addEventListener('click', tryPlay, { once: true });
+        const btn = document.getElementById('heroPlayBtn');
+        if (btn) {
+          btn.onclick = (e) => { e.stopPropagation(); tryPlay(); };
+          el.addEventListener('playing', () => { btn.style.display = 'none'; });
+          setInterval(() => {
+            if (el.paused && el.readyState >= 2) btn.style.display = 'flex';
+            else if (!el.paused) btn.style.display = 'none';
+          }, 1000);
+        }
       }
     };
   }
