@@ -282,10 +282,10 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
     <table style="width:100%;border-collapse:collapse;border:1px solid #E7E7E2;border-radius:10px;overflow:hidden;table-layout:fixed;">
       
       <tbody>
-      <sc-for list="{{ topNotices }}" as="n" hint-placeholder-count="2">
+      <sc-for list="{{ topNotices }}" as="n" hint-placeholder-count="3">
         <tr>
           <td style="padding:18px 20px;border-bottom:1px solid #F0F0EE;"><a class="notice-row" href="SensLink 공지사항.dc.html" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:10px;flex-wrap:nowrap;"><span style="background:#E23B3B;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;flex:none;">공지</span><span style="font-size:14px;font-weight:600;">{{ n.title }}</span></a></td>
-          <td style="padding:18px 20px 18px 0;border-bottom:1px solid #F0F0EE;text-align:right;font-size:13px;color:#9CA3AF;white-space:nowrap;">{{ n.date }}</td>
+          <td style="padding:18px 20px 18px 0;border-bottom:1px solid #F0F0EE;text-align:right;font-size:13px;color:#9CA3AF;white-space:nowrap;width:100px;">{{ n.date }}</td>
         </tr>
       </sc-for>
       </tbody>
@@ -345,7 +345,7 @@ class Component extends DCLogic {
     return [...notices].sort((a, b) => {
       if (a.pinned !== b.pinned) return a.pinned ? -1 : 1;
       return b.id - a.id;
-    }).slice(0, 2);
+    }).slice(0, 3);
   }
   renderVals() {
     return {
