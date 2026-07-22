@@ -45,6 +45,8 @@ a:hover{color:#123B7A;}
   a[style*="display:flex"],a[style*="display: flex"]{flex-wrap:wrap!important;}
   div[style*="position:absolute"][style*="width:220"],div[style*="position: absolute"][style*="width: 220"]{display:none!important;}
   .prod-grid{grid-template-columns:repeat(2,1fr)!important;}
+  .prod-grid div[style*="height:190px"]{height:auto!important;aspect-ratio:1/1;}
+  .prod-grid div[style*="-webkit-line-clamp:3"]{height:auto!important;max-height:57px;-webkit-line-clamp:2!important;}
   .cat-layout{flex-direction:column!important;}
   .cat-sidebar{width:100%!important;position:static!important;box-sizing:border-box!important;}
 }
@@ -251,11 +253,13 @@ a:hover{color:#123B7A;}
       </div>
       <div>
         <div style="color:#fff;font-weight:700;margin-bottom:10px;">사업자정보</div>
-        <div>상호명: 주식회사 센스링크</div>
-        <div>대표자: 장필상</div>
-        <div>사업자등록번호: 217-81-52202</div>
-        <div>통신판매업신고번호: 2026-서울강남-02086</div>
-        <div>고객센터: 02-1544-0344 · coopa18@naver.com</div>
+        <div style="display:flex;flex-direction:column;gap:8px;line-height:1.5;word-break:keep-all;">
+        <div style="margin:0;">상호명: 주식회사 센스링크</div>
+        <div style="margin:0;">대표자: 장필상</div>
+        <div style="margin:0;">사업자등록번호: 217-81-52202</div>
+        <div style="margin:0;">통신판매업신고번호: 2026-서울강남-02086</div>
+        <div style="margin:0;">고객센터: 1544-0344 · coopa18@naver.com</div>
+        </div>
       </div>
     </div>
     <div style="margin-top:28px;padding-top:20px;border-top:1px solid #16294A;color:#5D7096;">© 2026 SensLink Co., Ltd. All rights reserved.</div>
