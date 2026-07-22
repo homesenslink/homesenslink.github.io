@@ -55,6 +55,7 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
   .hero-media-box{width:100%!important;height:auto!important;aspect-ratio:420/320;}
   .hero-section{background:none!important;padding:0!important;align-items:stretch!important;gap:0!important;}
   .hero-photo-wrap{display:block!important;position:relative;width:100%;}
+  .hero-sheen{display:block!important;}
   .hero-copy{position:absolute!important;left:0;right:0;bottom:0;padding:20px 16px 24px!important;background:linear-gradient(180deg,transparent,rgba(11,35,64,.55) 35%,rgba(11,35,64,.92));z-index:3;}
   div[style*="display:flex;gap:12px;margin-top:32px"]{flex-wrap:wrap!important;}
   div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{padding:10px 16px!important;font-size:13px!important;}
@@ -62,7 +63,7 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
   .hero-photo-mobile{display:block!important;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 30%;}
   .hero-copy div[style*="font-size:44px"]{font-size:18px!important;line-height:1.35!important;word-break:keep-all;}
   .hero-copy .hero-desc{font-size:13px!important;max-width:100%!important;margin-top:12px!important;word-break:keep-all;}
-  .hero-copy div[style*="display:flex;gap:12px;margin-top:32px"]{margin-top:16px!important;}
+  .hero-copy div[style*="display:flex;gap:12px;margin-top:32px"]{margin-top:16px!important;justify-content:center!important;}
   #as-center-section{padding:0 12px 40px!important;}
   #as-center-section img{width:100%!important;}
 }
@@ -72,6 +73,8 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
   a[style*="flex:none;width:420px"]{width:100%!important;}
   div[style*="width: 420px; height: 320px"]{width:100%!important;}
 }
+@keyframes hairSheen{0%{transform:translateX(-140%) rotate(18deg);}55%,100%{transform:translateX(240%) rotate(18deg);}}
+.hero-sheen{display:none;position:absolute;top:-20%;bottom:30%;width:34%;left:28%;background:linear-gradient(100deg,transparent 0%,rgba(255,255,255,.05) 30%,rgba(255,255,255,.32) 50%,rgba(255,255,255,.05) 70%,transparent 100%);filter:blur(6px);mix-blend-mode:screen;animation:hairSheen 3.6s ease-in-out infinite;pointer-events:none;z-index:1;}
 @keyframes badgeFlip{from{filter:invert(0);}to{filter:invert(1);}}
 @keyframes badgeShine{0%,100%{box-shadow:0 4px 12px rgba(226,59,59,.4),0 0 0 0 rgba(255,255,255,.6);}50%{box-shadow:0 4px 20px rgba(226,59,59,.7),0 0 0 8px rgba(255,255,255,0);}}
 @keyframes goldShine{0%,100%{box-shadow:0 4px 12px rgba(0,0,0,.25),0 0 0 0 rgba(255,215,110,.6);}50%{box-shadow:0 4px 18px rgba(0,0,0,.3),0 0 0 6px rgba(255,215,110,0);}}
@@ -95,13 +98,14 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
   <div class="hero-section" style="background: url(&quot;assets/hero-bg-hair.jpg&quot;) center / cover no-repeat; padding: 64px 40px; display: flex; align-items: center; gap: 48px; position: relative; overflow: hidden; left: 0px">
     <div class="hero-photo-wrap">
     <img class="hero-photo-mobile" src="assets/hero-model-mobile.png" alt="모델 이미지" style="display:none;">
+    <div class="hero-sheen"></div>
     <div style="position:absolute;top:20px;left:40px;width:220px;z-index:5;">
       <img src="assets/badge-no1-14years.png" alt="가정용 헤어드라이어 국내출하대수 14년 연속 No.1" style="width: 165px; display: block; height: 87px">
     </div>
     <div class="hero-copy" style="flex:1;min-width:0;">
       
       <div style="font-size:44px;font-weight:800;line-height:1.25;color:#fff;letter-spacing:-.02em;"><span style="font-weight: normal;">일본 2천만대 판매&nbsp;</span><br><span style="font-weight: normal; color: rgb(226, 59, 59);"><img src="assets/japan-badge-red.png" alt="日本" style="height:0.85em;width:auto;vertical-align:-0.12em;display:inline-block;margin-right:6px;">
-<u style="font-family: 'Pretendard', system-ui, sans-serif; text-decoration-line: none; font-weight: 400; text-transform: none; letter-spacing: -0.04em;">14년 연속 판매 1위</u></span></div><div class="hero-desc" style="font-size: 16px; color: #fff; line-height: 1.6; margin-top: 20px; max-width: 460px; font-family: 'Pretendard', system-ui, sans-serif"><b style="background-color: #E51016">파나소닉 나노이 케어 헤어드라이어와 생활가전에 이르기까지 <br>정품 인증을 보증하며 14년간 일본 1위 제품과 만나보세요.</b></div>
+<u style="font-family: 'Pretendard', system-ui, sans-serif; text-decoration-line: none; font-weight: 400; text-transform: none; letter-spacing: -0.04em;">14년 연속 판매 1위</u></span></div><div class="hero-desc" style="font-size: 16px; color: #fff; line-height: 1.6; margin-top: 20px; max-width: 460px; font-family: 'Pretendard', system-ui, sans-serif"><b style="background-color: #E51016">파나소닉 나노케어 헤어드라이기의 놀라운 효과<br>정품인증을 보증하며 14년간 일본 1위 제품을 만나보세요.</b></div>
       <div style="display:flex;gap:12px;margin-top:32px;">
         <a href="SensLink 전체상품.dc.html" style="text-decoration:none;"><div style="background:#E23B3B;color:#fff;font-weight:700;font-size:12px;padding:11px 22px;border-radius:5px;" style-hover="background:#C42E2E;">전체 상품<span class="btn-suffix"> 보기</span></div></a>
         <a href="#best-products-section" style="text-decoration:none;"><div style="background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;font-weight:700;font-size:12px;padding:11px 22px;border-radius:5px;" style-hover="background:#E23B3B;border-color:#E23B3B;">베스트 상품<span class="btn-suffix"> 보기</span></div></a>
