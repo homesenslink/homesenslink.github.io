@@ -148,7 +148,7 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
       <div style="width:40px;height:40px;border-radius:50%;background:#fff;flex:none;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,35,64,0.35);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
       <div><div style="font-weight:700;font-size:14px;">전국 27개 센터 보유 프리미엄 브랜드</div><div style="font-size:12px;color:#C9D9F2;">전국 어디서나 빠른 서비스</div></div>
     </a>
-    <div style="background:linear-gradient(135deg,#0B2340 0%,#1D5FBF 100%);color:#fff;border-radius:10px;padding:20px;display:flex;gap:14px;align-items:center;">
+    <div onClick="{{ callCenter }}" style="background:linear-gradient(135deg,#0B2340 0%,#1D5FBF 100%);color:#fff;border-radius:10px;padding:20px;display:flex;gap:14px;align-items:center;cursor:pointer;">
       <div style="width:40px;height:40px;border-radius:50%;background:#fff;flex:none;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(11,35,64,0.35);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1D5FBF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.6 2.81.72A2 2 0 0 1 22 16.92z"></path></svg></div>
       <div><div style="font-weight:700;font-size:14px;">대표번호&nbsp; 1544-0344</div><div style="font-size:12px;color:#C9D9F2;">고객센터 상담 연결</div></div>
     </div>
@@ -362,6 +362,12 @@ class Component extends DCLogic {
   renderVals() {
     return {
       topNotices: this.loadNotices(),
+      callCenter: () => {
+        if (window.innerWidth > 900) return;
+        if (confirm('고객센터 1544-0344로 전화를 걸까요?')) {
+          window.location.href = 'tel:15440344';
+        }
+      },
       heroVideoRef: (el) => {
         if (!el) return;
         // PC: 원본 고화질 영상 / 모바일: 호환 인코딩 영상
