@@ -111,7 +111,7 @@ div[style*="font-size:12px;padding:11px 22px;border-radius:5px"]{white-space:now
     </div>
     <a href="SensLink 상품상세.dc.html" class="hero-media-col" style="flex:none;width:420px;text-decoration:none;display:block;">
       <div class="hero-media-box" style="width:420px;height:320px;border-radius:12px;overflow:hidden;position:relative;box-shadow:0 20px 50px rgba(0,0,0,.25);cursor:pointer;">
-        <video src="assets/eh-na7m-360.mp4" ref="{{ heroVideoRef }}" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block"></video>
+        <video src="assets/eh-na7m-360-mobile.mp4" ref="{{ heroVideoRef }}" autoplay="" muted="" loop="" playsinline="" webkit-playsinline="" preload="auto" style="width: 100%; height: 100%; object-fit: cover; object-position: center; display: block"></video>
         <img src="assets/panasonic-logo.png" alt="Panasonic" style="position:absolute;top:12px;right:14px;width:110px;height:auto;z-index:4;pointer-events:none;">
         <div id="heroPlayBtn" style="position:absolute;inset:0;display:none;align-items:center;justify-content:center;z-index:5;cursor:pointer;background:rgba(0,0,0,0.12);">
           <div style="width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,0.92);display:flex;align-items:center;justify-content:center;font-size:24px;color:#0B2340;padding-left:5px;box-shadow:0 4px 14px rgba(0,0,0,0.25);">▶</div>
@@ -368,7 +368,9 @@ class Component extends DCLogic {
         document.addEventListener('click', tryPlay, { once: true });
         const btn = document.getElementById('heroPlayBtn');
         if (btn) {
-          btn.onclick = (e) => { e.stopPropagation(); tryPlay(); };
+          const playHandler = (e) => { e.preventDefault(); e.stopPropagation(); tryPlay(); };
+          btn.addEventListener('click', playHandler);
+          btn.addEventListener('touchend', playHandler);
           el.addEventListener('playing', () => { btn.style.display = 'none'; });
           setInterval(() => {
             if (el.paused && el.readyState >= 2) btn.style.display = 'flex';
