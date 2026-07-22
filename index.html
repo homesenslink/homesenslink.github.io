@@ -361,6 +361,10 @@ class Component extends DCLogic {
       topNotices: this.loadNotices(),
       heroVideoRef: (el) => {
         if (!el) return;
+        // PC: 원본 고화질 영상 / 모바일: 호환 인코딩 영상
+        if (window.innerWidth > 900 && !el.src.endsWith('eh-na7m-360.mp4')) {
+          el.src = 'assets/eh-na7m-360.mp4';
+        }
         el.muted = true;
         el.defaultMuted = true;
         el.loop = true;
