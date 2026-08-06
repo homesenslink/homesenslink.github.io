@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<style>
+body{margin:0;background:#EDEDEA;font-family:'Pretendard',system-ui,sans-serif;}
+a{color:#1D5FBF;}
+a:hover{color:#123B7A;}
+textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
+@media (max-width:900px){
+  .header-logo{width:100%!important;display:flex!important;justify-content:center!important;order:-1;}
+  .header-cta{display:none!important;}
+  div[style*="width:1440px;margin:0 auto"],div[style*="width: 1440px; margin: 0 auto"]{width:100%!important;box-shadow:none!important;}
+  div[style*="display:flex"],div[style*="display: flex"]{flex-wrap:wrap!important;}
+  img{max-width:100%;}
+  div[style*="grid-template-columns:repeat(3"],div[style*="grid-template-columns: repeat(3"]{grid-template-columns:repeat(1,1fr)!important;}
+  div[style*="padding:8px 40px"],div[style*="padding: 8px 40px"]{padding:8px 16px!important;gap:6px!important;font-size:10px!important;overflow-x:auto;white-space:nowrap;}
+  div[style*="padding:14px 40px"],div[style*="padding: 14px 40px"]{padding:12px 16px!important;gap:10px!important;}
+  div[style*="padding:16px 40px"],div[style*="padding: 16px 40px"]{padding:12px 16px!important;}
+  div[style*="padding:28px 40px"],div[style*="padding: 28px 40px"]{padding:20px 16px!important;}
+  div[style*="padding:20px 40px 80px"],div[style*="padding: 20px 40px 80px"]{padding:20px 16px 44px!important;}
+  div[style*="display:flex;gap:32px;font-size:15px"],div[style*="display: flex; gap: 32px; font-size: 15px"]{gap:8px 14px!important;font-size:12px!important;flex-wrap:wrap!important;justify-content:center!important;}
+  div[style*="padding:14px 40px;display:flex;align-items:center;justify-content:space-between"],div[style*="padding: 14px 40px; display: flex; align-items: center; justify-content: space-between"]{flex-wrap:wrap!important;gap:10px!important;padding:12px 16px!important;justify-content:center!important;}
+}
+</style>
+</helmet>
+
+<div style="width:1440px;max-width:100%;margin:0 auto;font-family:'Pretendard',system-ui,sans-serif;color:#16181D;background:#FAFAF8;box-shadow:0 0 40px rgba(0,0,0,.08);overflow-x:hidden;">
+
+  <div style="color:#C9D6EA;font-size:12px;padding:8px 40px;display:flex;justify-content:center;gap:24px;letter-spacing:.02em;background-color:#193456;">
+    <span>A/S Tel&nbsp; 1588-8452&nbsp; &nbsp; &nbsp; &nbsp;·&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;센스링크 고객센터&nbsp; 1544-0344</span>
+  </div>
+
+  <div style="background:#fff;padding:14px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E7E7E2;">
+    <a href="index.html" class="header-logo" style="display:block;"><img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:38px;width:auto;display:block;"></a>
+    <div style="display:flex;gap:32px;font-size:15px;font-weight:600;color:#16181D;">
+      <a href="index.html#best-products-section" style="color:inherit;text-decoration:none;">베스트 상품</a><a href="SensLink 전체상품.dc.html" style="color:inherit;text-decoration:none;">전체 상품</a><a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;">묻고 답하기</a><span style="color:#1D5FBF;">Link Story</span><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;">센스링크 소개</a>
+    </div>
+    <a href="SensLink 전체상품.dc.html" class="header-cta" style="text-decoration:none;"><div style="background:#0B2340;color:#fff;font-size:14px;font-weight:700;padding:10px 20px;border-radius:6px;">전체 상품 보기</div></a>
+  </div>
+
+  <div style="padding:16px 40px;font-size:13px;color:#9CA3AF;"><a href="index.html" style="color:#9CA3AF;text-decoration:none;">홈</a> <span style="margin:0 6px;">/</span> <span style="color:#16181D;font-weight:600;">Link Story</span></div>
+
+  <div style="padding:20px 40px 80px;max-width:1200px;margin:0 auto;">
+
+    <div style="margin-bottom:8px;">
+      <div style="font-size:28px;font-weight:800;">Link Story</div>
+      <div style="font-size:15px;color:#6B7280;margin-top:8px;">센스링크가 전하는 이야기 — 파나소닉 제품 리뷰, 사용 팁, 브랜드 소식을 만나보세요.</div>
+    </div>
+
+    <div style="display:flex;justify-content:flex-end;margin:16px 0 24px;">
+      <div onClick="{{ toggleAdmin }}" style="cursor:pointer;font-size:13px;font-weight:700;padding:9px 16px;border-radius:6px;border:1px solid #E7E7E2;color:#6B7280;white-space:nowrap;">{{ adminLabel }}</div>
+    </div>
+
+    <sc-if value="{{ isAdmin }}">
+      <div style="border:1px solid #E7E7E2;border-radius:10px;background:#fff;padding:24px;margin-bottom:28px;">
+        <div style="font-size:15px;font-weight:700;margin-bottom:14px;">{{ formHeading }}</div>
+        <input value="{{ draftTitle }}" onChange="{{ onTitleChange }}" placeholder="글 제목" style="width:100%;box-sizing:border-box;font-size:15px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;margin-bottom:10px;">
+        <div style="border:1px dashed #B9C6DB;border-radius:8px;background:#F6F9FE;padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:16px;">
+          <sc-if value="{{ draftImage }}" hint-placeholder-val="{{ false }}"><img src="{{ draftImage }}" alt="미리보기" style="width:96px;height:72px;object-fit:cover;border-radius:6px;border:1px solid #E7E7E2;flex-shrink:0;"></sc-if>
+          <div style="flex:1;">
+            <label style="cursor:pointer;display:inline-block;background:#1D5FBF;color:#fff;font-size:14px;font-weight:700;padding:10px 18px;border-radius:6px;">
+              📷 사진 선택하기
+              <input type="file" accept="image/*" onChange="{{ onFilePick }}" style="display:none;">
+            </label>
+            <div style="font-size:12px;color:#6B7280;margin-top:8px;">{{ imageHint }}</div>
+          </div>
+          <sc-if value="{{ draftImage }}" hint-placeholder-val="{{ false }}"><div onClick="{{ clearImage }}" style="cursor:pointer;font-size:13px;font-weight:700;color:#E23B3B;white-space:nowrap;">사진 삭제</div></sc-if>
+        </div>
+        <input value="{{ draftLink }}" onChange="{{ onLinkChange }}" placeholder="블로그 원문 링크(URL)" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;margin-bottom:10px;">
+        <textarea value="{{ draftExcerpt }}" onChange="{{ onExcerptChange }}" placeholder="한 줄 요약(선택)" rows="2" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;resize:vertical;line-height:1.6;"></textarea>
+        <div style="display:flex;gap:10px;margin-top:16px;justify-content:space-between;align-items:center;">
+          <div onClick="{{ exportData }}" style="cursor:pointer;font-size:13px;font-weight:700;padding:10px 16px;border-radius:6px;border:1px solid #1D5FBF;color:#1D5FBF;">데이터 내보내기</div>
+          <div style="display:flex;gap:10px;">
+            <sc-if value="{{ isEditing }}"><div onClick="{{ cancelForm }}" style="cursor:pointer;font-size:14px;font-weight:600;padding:11px 20px;border-radius:6px;border:1px solid #E7E7E2;color:#6B7280;">취소</div></sc-if>
+            <div onClick="{{ saveForm }}" style="cursor:pointer;background:#E23B3B;color:#fff;font-size:14px;font-weight:700;padding:11px 24px;border-radius:6px;">{{ saveLabel }}</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #E7E7E2;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(11,35,64,0.04);">
+          <a href="{{ p.link }}" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+            <div style="width:100%;aspect-ratio:4/3;background:#EDF3FC;overflow:hidden;position:relative;">
+              <sc-if value="{{ p.image }}"><img src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;display:block;"></sc-if>
+              <sc-if value="{{ p.noImage }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9DB6DA;font-size:14px;font-weight:600;">대표 사진</div></sc-if>
+            </div>
+          </a>
+          <div style="padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;">
+            <a href="{{ p.link }}" target="_blank" style="text-decoration:none;color:#16181D;"><div style="font-size:17px;font-weight:700;line-height:1.5;">{{ p.title }}</div></a>
+            <sc-if value="{{ p.excerpt }}"><div style="font-size:14px;color:#6B7280;line-height:1.6;margin-top:8px;">{{ p.excerpt }}</div></sc-if>
+            <sc-if value="{{ isAdmin }}">
+              <div style="display:flex;gap:8px;margin-top:16px;">
+                <div onClick="{{ p.onEdit }}" style="cursor:pointer;font-size:12px;font-weight:700;padding:6px 12px;border-radius:5px;border:1px solid #1D5FBF;color:#1D5FBF;">수정</div>
+                <div onClick="{{ p.onDelete }}" style="cursor:pointer;font-size:12px;font-weight:700;padding:6px 12px;border-radius:5px;border:1px solid #E23B3B;color:#E23B3B;">삭제</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ isEmpty }}">
+      <div style="padding:80px 0;text-align:center;color:#9CA3AF;font-size:15px;">아직 등록된 글이 없습니다. 관리자 모드에서 블로그 글을 추가해주세요.</div>
+    </sc-if>
+
+  </div>
+
+  <div style="background:#0B2340;padding:28px 40px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;text-align:center;color:#fff;">
+    <div style="font-size:14px;">더 많은 파나소닉 정품을 네이버 스마트스토어에서도 만나보세요.</div>
+    <a href="https://smartstore.naver.com/senslink" target="_blank" style="text-decoration:none;"><div style="background:#03C75A;color:#fff;font-weight:700;font-size:13px;padding:10px 18px;border-radius:6px;">스마트스토어 바로가기 ↗</div></a>
+  </div>
+
+  <div style="color:#8FA3C4;padding:48px 40px 30px;font-size:13px;line-height:1.9;background:linear-gradient(180deg,#193456,#0B2340);">
+    <div style="display:flex;gap:64px;justify-content:space-between;flex-wrap:wrap;">
+      <div style="flex:1;min-width:240px;">
+        <a href="index.html" style="background:#fff;display:inline-flex;padding:10px 16px;border-radius:8px;margin-bottom:16px;text-decoration:none;">
+          <img src="assets/senslink-logo-wide.png" alt="센스링크 SensLink" style="height:32px;width:auto;display:block;">
+        </a>
+        <div>센스링크는 파나소닉 공식 총판으로, 본사 인증을 받은 온라인 공식 인증 판매 스토어입니다.</div>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">쇼핑</div>
+        <a href="index.html" style="color:inherit;text-decoration:none;display:block;">베스트 상품</a><a href="SensLink 전체상품.dc.html" style="color:inherit;text-decoration:none;display:block;">전체 상품</a>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">고객지원</div>
+        <a href="SensLink 공지사항.dc.html" style="color:inherit;text-decoration:none;display:block;">공지사항</a><a href="SensLink 묻고답하기.dc.html" style="color:inherit;text-decoration:none;display:block;">묻고 답하기</a><a href="SensLink Link Story.dc.html" style="color:inherit;text-decoration:none;display:block;">Link Story</a><a href="SensLink 소개.dc.html" style="color:inherit;text-decoration:none;display:block;">센스링크 소개</a>
+      </div>
+      <div>
+        <div style="color:#fff;font-weight:700;margin-bottom:10px;">사업자정보</div>
+        <div style="display:flex;flex-direction:column;gap:8px;line-height:1.5;word-break:keep-all;">
+        <div style="margin:0;">상호명: 주식회사 센스링크</div>
+        <div style="margin:0;">대표자: 장필상</div>
+        <div style="margin:0;">사업자등록번호: 217-81-52202</div>
+        <div style="margin:0;">통신판매업신고번호: 2026-서울강남-02086</div>
+        <div style="margin:0;">고객센터: 1544-0344 · coopa18@naver.com</div>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:28px;padding-top:20px;border-top:1px solid #16294A;color:#5D7096;">© 2026 SensLink Co., Ltd. All rights reserved.</div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STORAGE_KEY = 'senslink-linkstory-v1';
+const seed = [];
+
+class Component extends DCLogic {
+  state = {
+    posts: this.load(),
+    isAdmin: false,
+    editingId: null,
+    draftTitle: '',
+    draftImage: '',
+    draftLink: '',
+    draftExcerpt: ''
+  };
+
+  load() {
+    try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) return JSON.parse(raw); } catch (e) {}
+    return seed;
+  }
+  persist(posts) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(posts)); } catch (e) {} }
+
+  toggleAdmin = () => {
+    if (!this.state.isAdmin) {
+      const pw = window.prompt('관리자 비밀번호를 입력하세요');
+      if (pw !== '4295') { if (pw !== null) window.alert('비밀번호가 올바르지 않습니다.'); return; }
+    }
+    this.setState(s => ({ isAdmin: !s.isAdmin, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' }));
+  };
+
+  onTitleChange = (e) => this.setState({ draftTitle: e.target.value });
+  onFilePick = (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    if (file.size > 3 * 1024 * 1024) { window.alert('사진 용량이 너무 큽니다. 3MB 이하로 올려주세요.'); e.target.value = ''; return; }
+    const reader = new FileReader();
+    reader.onload = () => this.setState({ draftImage: reader.result });
+    reader.readAsDataURL(file);
+    e.target.value = '';
+  };
+  clearImage = () => this.setState({ draftImage: '' });
+  onLinkChange = (e) => this.setState({ draftLink: e.target.value });
+  onExcerptChange = (e) => this.setState({ draftExcerpt: e.target.value });
+
+  cancelForm = () => this.setState({ editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' });
+
+  saveForm = () => {
+    const title = this.state.draftTitle.trim();
+    if (!title) { window.alert('제목을 입력해주세요.'); return; }
+    const p = { title, image: this.state.draftImage.trim(), link: this.state.draftLink.trim(), excerpt: this.state.draftExcerpt.trim() };
+    let posts;
+    if (this.state.editingId != null) {
+      posts = this.state.posts.map(x => x.id === this.state.editingId ? { ...x, ...p } : x);
+    } else {
+      const nextId = this.state.posts.reduce((m, x) => Math.max(m, x.id || 0), 0) + 1;
+      posts = [{ id: nextId, ...p }, ...this.state.posts];
+    }
+    this.persist(posts);
+    this.setState({ posts, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' });
+  };
+
+  editPost = (id) => {
+    const x = this.state.posts.find(p => p.id === id); if (!x) return;
+    this.setState({ editingId: id, draftTitle: x.title, draftImage: x.image || '', draftLink: x.link || '', draftExcerpt: x.excerpt || '' });
+    window.scrollTo(0, 0);
+  };
+  deletePost = (id) => {
+    if (!window.confirm('이 글을 삭제하시겠습니까?')) return;
+    const posts = this.state.posts.filter(p => p.id !== id);
+    this.persist(posts);
+    this.setState({ posts });
+  };
+
+  exportData = () => {
+    const data = JSON.stringify(this.state.posts, null, 2);
+    console.log('=== Link Story 데이터 백업 ===');
+    console.log(data);
+    window.alert('콘솔(F12)에 데이터가 출력되었습니다. 복사해서 전달해주세요.');
+  };
+
+  renderVals() {
+    const rows = this.state.posts.map(p => ({
+      ...p,
+      link: p.link || '#',
+      noImage: !p.image,
+      onEdit: () => this.editPost(p.id),
+      onDelete: () => this.deletePost(p.id)
+    }));
+    return {
+      posts: rows,
+      isEmpty: rows.length === 0,
+      isAdmin: this.state.isAdmin,
+      adminLabel: this.state.isAdmin ? '관리자 모드 종료' : '관리자 모드',
+      isEditing: this.state.editingId != null,
+      formHeading: this.state.editingId != null ? '글 수정' : '새 글 추가',
+      saveLabel: this.state.editingId != null ? '수정 저장' : '추가',
+      draftTitle: this.state.draftTitle,
+      draftImage: this.state.draftImage,
+      imageHint: this.state.draftImage ? '사진이 선택되었습니다. 다른 사진으로 바꾸려면 다시 선택하세요.' : '컴퓨터나 휴대폰에 있는 사진 파일을 골라주세요. (3MB 이하)',
+      onFilePick: this.onFilePick,
+      clearImage: this.clearImage,
+      draftLink: this.state.draftLink,
+      draftExcerpt: this.state.draftExcerpt,
+      toggleAdmin: this.toggleAdmin,
+      onTitleChange: this.onTitleChange,
+      onImageChange: this.onImageChange,
+      onLinkChange: this.onLinkChange,
+      onExcerptChange: this.onExcerptChange,
+      cancelForm: this.cancelForm,
+      saveForm: this.saveForm,
+      exportData: this.exportData
+    };
+  }
+}
+</script>
+</body>
+</html>
