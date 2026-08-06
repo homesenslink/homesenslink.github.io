@@ -64,7 +64,7 @@ textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
         <div style="font-size:15px;font-weight:700;margin-bottom:14px;">{{ formHeading }}</div>
         <input value="{{ draftTitle }}" onChange="{{ onTitleChange }}" placeholder="글 제목" style="width:100%;box-sizing:border-box;font-size:15px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;margin-bottom:10px;">
         <div style="border:1px dashed #B9C6DB;border-radius:8px;background:#F6F9FE;padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:16px;">
-          <sc-if value="{{ draftImage }}" hint-placeholder-val="{{ false }}"><img src="{{ draftImage }}" alt="미리보기" style="width:96px;height:72px;object-fit:cover;border-radius:6px;border:1px solid #E7E7E2;flex-shrink:0;"></sc-if>
+          <sc-if value="{{ previewImg }}" hint-placeholder-val="{{ false }}">{{ previewImg }}</sc-if>
           <div style="flex:1;">
             <label style="cursor:pointer;display:inline-block;background:#1D5FBF;color:#fff;font-size:14px;font-weight:700;padding:10px 18px;border-radius:6px;">
               📷 사진 선택하기
@@ -74,8 +74,9 @@ textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
           </div>
           <sc-if value="{{ draftImage }}" hint-placeholder-val="{{ false }}"><div onClick="{{ clearImage }}" style="cursor:pointer;font-size:13px;font-weight:700;color:#E23B3B;white-space:nowrap;">사진 삭제</div></sc-if>
         </div>
-        <input value="{{ draftLink }}" onChange="{{ onLinkChange }}" placeholder="블로그 원문 링크(URL)" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;margin-bottom:10px;">
-        <textarea value="{{ draftExcerpt }}" onChange="{{ onExcerptChange }}" placeholder="한 줄 요약(선택)" rows="2" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;resize:vertical;line-height:1.6;"></textarea>
+        <textarea value="{{ draftExcerpt }}" onChange="{{ onExcerptChange }}" placeholder="한 줄 요약 — 카드에 보이는 짧은 설명(선택)" rows="2" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;resize:vertical;line-height:1.6;margin-bottom:10px;"></textarea>
+        <textarea value="{{ draftContent }}" onChange="{{ onContentChange }}" placeholder="본문 — 블로그 글 전체 내용을 여기에 붙여넣으세요. (홈페이지 안에서 이 내용이 그대로 보입니다)" rows="8" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;resize:vertical;line-height:1.7;margin-bottom:10px;"></textarea>
+        <input value="{{ draftLink }}" onChange="{{ onLinkChange }}" placeholder="원문 링크(URL) — 원본 블로그로 가는 버튼용(선택)" style="width:100%;box-sizing:border-box;font-size:14px;padding:12px 14px;border:1px solid #E7E7E2;border-radius:6px;">
         <div style="display:flex;gap:10px;margin-top:16px;justify-content:space-between;align-items:center;">
           <div onClick="{{ exportData }}" style="cursor:pointer;font-size:13px;font-weight:700;padding:10px 16px;border-radius:6px;border:1px solid #1D5FBF;color:#1D5FBF;">데이터 내보내기</div>
           <div style="display:flex;gap:10px;">
@@ -86,20 +87,22 @@ textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
       </div>
     </sc-if>
 
+    <sc-if value="{{ isList }}" hint-placeholder-val="{{ true }}">
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
       <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
         <div style="background:#fff;border:1px solid #E7E7E2;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(11,35,64,0.04);">
-          <a href="{{ p.link }}" target="_blank" style="text-decoration:none;color:inherit;display:block;">
+          <div onClick="{{ p.onOpen }}" style="cursor:pointer;display:block;">
             <div style="width:100%;aspect-ratio:4/3;background:#EDF3FC;overflow:hidden;position:relative;">
-              <sc-if value="{{ p.image }}"><img src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:100%;object-fit:cover;display:block;"></sc-if>
+              <sc-if value="{{ p.imgEl }}">{{ p.imgEl }}</sc-if>
               <sc-if value="{{ p.noImage }}"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#9DB6DA;font-size:14px;font-weight:600;">대표 사진</div></sc-if>
             </div>
-          </a>
+          </div>
           <div style="padding:18px 20px 20px;display:flex;flex-direction:column;flex:1;">
-            <a href="{{ p.link }}" target="_blank" style="text-decoration:none;color:#16181D;"><div style="font-size:17px;font-weight:700;line-height:1.5;">{{ p.title }}</div></a>
+            <div onClick="{{ p.onOpen }}" style="cursor:pointer;color:#16181D;"><div style="font-size:17px;font-weight:700;line-height:1.5;">{{ p.title }}</div></div>
             <sc-if value="{{ p.excerpt }}"><div style="font-size:14px;color:#6B7280;line-height:1.6;margin-top:8px;">{{ p.excerpt }}</div></sc-if>
+            <div onClick="{{ p.onOpen }}" style="cursor:pointer;font-size:13px;font-weight:700;color:#1D5FBF;margin-top:14px;">자세히 보기 →</div>
             <sc-if value="{{ isAdmin }}">
-              <div style="display:flex;gap:8px;margin-top:16px;">
+              <div style="display:flex;gap:8px;margin-top:14px;">
                 <div onClick="{{ p.onEdit }}" style="cursor:pointer;font-size:12px;font-weight:700;padding:6px 12px;border-radius:5px;border:1px solid #1D5FBF;color:#1D5FBF;">수정</div>
                 <div onClick="{{ p.onDelete }}" style="cursor:pointer;font-size:12px;font-weight:700;padding:6px 12px;border-radius:5px;border:1px solid #E23B3B;color:#E23B3B;">삭제</div>
               </div>
@@ -108,6 +111,18 @@ textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
         </div>
       </sc-for>
     </div>
+    </sc-if>
+
+    <sc-if value="{{ isDetail }}" hint-placeholder-val="{{ false }}">
+      <div style="max-width:800px;margin:0 auto;">
+        <div onClick="{{ closeDetail }}" style="cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:700;color:#1D5FBF;margin-bottom:24px;">← 목록으로 돌아가기</div>
+        <sc-if value="{{ detailImg }}">{{ detailImg }}</sc-if>
+        <div style="font-size:32px;font-weight:800;line-height:1.35;margin-bottom:16px;">{{ current.title }}</div>
+        <sc-if value="{{ current.excerpt }}"><div style="font-size:17px;color:#6B7280;line-height:1.7;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #E7E7E2;">{{ current.excerpt }}</div></sc-if>
+        <div style="font-size:16px;color:#2A2E37;line-height:1.9;white-space:pre-wrap;word-break:keep-all;">{{ current.content }}</div>
+        <sc-if value="{{ current.link }}"><div style="margin-top:36px;"><a href="{{ current.link }}" target="_blank" style="text-decoration:none;"><div style="display:inline-block;background:#0B2340;color:#fff;font-size:14px;font-weight:700;padding:12px 24px;border-radius:6px;">원문 블로그에서 보기 ↗</div></a></div></sc-if>
+      </div>
+    </sc-if>
 
     <sc-if value="{{ isEmpty }}">
       <div style="padding:80px 0;text-align:center;color:#9CA3AF;font-size:15px;">아직 등록된 글이 없습니다. 관리자 모드에서 블로그 글을 추가해주세요.</div>
@@ -164,8 +179,13 @@ class Component extends DCLogic {
     draftTitle: '',
     draftImage: '',
     draftLink: '',
-    draftExcerpt: ''
+    draftExcerpt: '',
+    draftContent: '',
+    selectedId: null
   };
+
+  openDetail = (id) => { this.setState({ selectedId: id }); window.scrollTo(0, 0); };
+  closeDetail = () => this.setState({ selectedId: null });
 
   load() {
     try { const raw = localStorage.getItem(STORAGE_KEY); if (raw) return JSON.parse(raw); } catch (e) {}
@@ -178,7 +198,7 @@ class Component extends DCLogic {
       const pw = window.prompt('관리자 비밀번호를 입력하세요');
       if (pw !== '4295') { if (pw !== null) window.alert('비밀번호가 올바르지 않습니다.'); return; }
     }
-    this.setState(s => ({ isAdmin: !s.isAdmin, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' }));
+    this.setState(s => ({ isAdmin: !s.isAdmin, selectedId: null, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '', draftContent: '' }));
   };
 
   onTitleChange = (e) => this.setState({ draftTitle: e.target.value });
@@ -194,13 +214,14 @@ class Component extends DCLogic {
   clearImage = () => this.setState({ draftImage: '' });
   onLinkChange = (e) => this.setState({ draftLink: e.target.value });
   onExcerptChange = (e) => this.setState({ draftExcerpt: e.target.value });
+  onContentChange = (e) => this.setState({ draftContent: e.target.value });
 
-  cancelForm = () => this.setState({ editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' });
+  cancelForm = () => this.setState({ editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '', draftContent: '' });
 
   saveForm = () => {
     const title = this.state.draftTitle.trim();
     if (!title) { window.alert('제목을 입력해주세요.'); return; }
-    const p = { title, image: this.state.draftImage.trim(), link: this.state.draftLink.trim(), excerpt: this.state.draftExcerpt.trim() };
+    const p = { title, image: this.state.draftImage.trim(), link: this.state.draftLink.trim(), excerpt: this.state.draftExcerpt.trim(), content: this.state.draftContent.trim() };
     let posts;
     if (this.state.editingId != null) {
       posts = this.state.posts.map(x => x.id === this.state.editingId ? { ...x, ...p } : x);
@@ -209,39 +230,54 @@ class Component extends DCLogic {
       posts = [{ id: nextId, ...p }, ...this.state.posts];
     }
     this.persist(posts);
-    this.setState({ posts, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '' });
+    this.setState({ posts, editingId: null, draftTitle: '', draftImage: '', draftLink: '', draftExcerpt: '', draftContent: '' });
   };
 
   editPost = (id) => {
     const x = this.state.posts.find(p => p.id === id); if (!x) return;
-    this.setState({ editingId: id, draftTitle: x.title, draftImage: x.image || '', draftLink: x.link || '', draftExcerpt: x.excerpt || '' });
+    this.setState({ selectedId: null, editingId: id, draftTitle: x.title, draftImage: x.image || '', draftLink: x.link || '', draftExcerpt: x.excerpt || '', draftContent: x.content || '' });
     window.scrollTo(0, 0);
   };
   deletePost = (id) => {
     if (!window.confirm('이 글을 삭제하시겠습니까?')) return;
     const posts = this.state.posts.filter(p => p.id !== id);
     this.persist(posts);
-    this.setState({ posts });
+    this.setState({ posts, selectedId: null });
   };
 
   exportData = () => {
     const data = JSON.stringify(this.state.posts, null, 2);
-    console.log('=== Link Story 데이터 백업 ===');
-    console.log(data);
-    window.alert('콘솔(F12)에 데이터가 출력되었습니다. 복사해서 전달해주세요.');
+    const blob = new Blob([data], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'linkstory-data.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    window.alert('linkstory-data.json 파일이 저장되었습니다. 이 파일을 전달해주세요.');
   };
 
   renderVals() {
+    const current = this.state.selectedId != null ? this.state.posts.find(p => p.id === this.state.selectedId) : null;
+    const isDetail = !!current;
     const rows = this.state.posts.map(p => ({
       ...p,
-      link: p.link || '#',
       noImage: !p.image,
+      imgEl: p.image ? React.createElement('img', { src: p.image, alt: p.title, style: { width: '100%', height: '100%', objectFit: 'cover', display: 'block' } }) : null,
+      onOpen: () => this.openDetail(p.id),
       onEdit: () => this.editPost(p.id),
       onDelete: () => this.deletePost(p.id)
     }));
     return {
       posts: rows,
-      isEmpty: rows.length === 0,
+      isEmpty: rows.length === 0 && !isDetail,
+      isList: !isDetail,
+      isDetail,
+      current: current || {},
+      previewImg: this.state.draftImage ? React.createElement('img', { src: this.state.draftImage, alt: '미리보기', style: { width: '96px', height: '72px', objectFit: 'cover', borderRadius: '6px', border: '1px solid #E7E7E2', flexShrink: 0 } }) : null,
+      detailImg: (current && current.image) ? React.createElement('img', { src: current.image, alt: current.title, style: { width: '100%', borderRadius: '12px', display: 'block', marginBottom: '28px' } }) : null,
       isAdmin: this.state.isAdmin,
       adminLabel: this.state.isAdmin ? '관리자 모드 종료' : '관리자 모드',
       isEditing: this.state.editingId != null,
@@ -249,19 +285,22 @@ class Component extends DCLogic {
       saveLabel: this.state.editingId != null ? '수정 저장' : '추가',
       draftTitle: this.state.draftTitle,
       draftImage: this.state.draftImage,
-      imageHint: this.state.draftImage ? '사진이 선택되었습니다. 다른 사진으로 바꾸려면 다시 선택하세요.' : '컴퓨터나 휴대폰에 있는 사진 파일을 골라주세요. (3MB 이하)',
-      onFilePick: this.onFilePick,
-      clearImage: this.clearImage,
       draftLink: this.state.draftLink,
       draftExcerpt: this.state.draftExcerpt,
+      draftContent: this.state.draftContent,
+      imageHint: this.state.draftImage ? '사진이 선택되었습니다. 다른 사진으로 바꾸려면 다시 선택하세요.' : '컴퓨터나 휴대폰에 있는 사진 파일을 골라주세요. (3MB 이하)',
       toggleAdmin: this.toggleAdmin,
       onTitleChange: this.onTitleChange,
       onImageChange: this.onImageChange,
+      onFilePick: this.onFilePick,
+      clearImage: this.clearImage,
       onLinkChange: this.onLinkChange,
       onExcerptChange: this.onExcerptChange,
+      onContentChange: this.onContentChange,
       cancelForm: this.cancelForm,
       saveForm: this.saveForm,
-      exportData: this.exportData
+      exportData: this.exportData,
+      closeDetail: this.closeDetail
     };
   }
 }
