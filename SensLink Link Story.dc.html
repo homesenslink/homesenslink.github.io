@@ -170,6 +170,7 @@ textarea, input{font-family:'Pretendard',system-ui,sans-serif;}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 const STORAGE_KEY = 'senslink-linkstory-v1';
+const SEEN_KEY = 'senslink-linkstory-seen-v1';
 const seed = [];
 
 class Component extends DCLogic {
@@ -186,10 +187,24 @@ class Component extends DCLogic {
   };
 
   componentDidMount() {
-    try { if (localStorage.getItem(STORAGE_KEY)) return; } catch (e) {}
     fetch('linkstory-data.json', { cache: 'no-store' })
       .then(r => r.ok ? r.json() : null)
-      .then(data => { if (Array.isArray(data) && data.length) this.setState({ posts: data }); })
+      .then(data => {
+        if (!Array.isArray(data) || !data.length) return;
+        let hasLocal = false;
+        try { hasLocal = !!localStorage.getItem(STORAGE_KEY); } catch (e) {}
+        if (!hasLocal) { this.setState({ posts: data }); return; }
+        let seen = [];
+        try { seen = JSON.parse(localStorage.getItem(SEEN_KEY) || '[]'); } catch (e) {}
+        if (!seen.length) seen = this.state.posts.map(p => p.id);
+        const fresh = data.filter(p => seen.indexOf(p.id) === -1);
+        const allSeen = seen.concat(data.map(p => p.id).filter(id => seen.indexOf(id) === -1));
+        try { localStorage.setItem(SEEN_KEY, JSON.stringify(allSeen)); } catch (e) {}
+        if (!fresh.length) return;
+        const posts = fresh.concat(this.state.posts);
+        this.persist(posts);
+        this.setState({ posts });
+      })
       .catch(() => {});
   }
 
