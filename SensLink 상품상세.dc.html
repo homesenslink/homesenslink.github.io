@@ -74,7 +74,7 @@ a:hover{color:#123B7A;}
       </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;">
         <div onClick="{{ thumb0 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive0 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
-          <img src="assets/eh-na7m-2.jpg" alt="정면 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
+          <img src="assets/eh-na7m-autumn.png" alt="정면 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
         </div>
         <div onClick="{{ thumb1 }}" style="border-width:2px;border-style:solid;border-color:{{ isActive1 }};border-radius:8px;overflow:hidden;height:100px;cursor:pointer;">
           <img src="assets/detail/na7m-5.jpg" alt="측면 컷" style="width:100%;height:100%;object-fit:cover;display:block;">
@@ -456,16 +456,16 @@ a:hover{color:#123B7A;}
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { activeImg: 'assets/eh-na7m-2.jpg' };
+  state = { activeImg: 'assets/eh-na7m-autumn.png' };
   renderVals() {
     const set = (src) => () => this.setState({ activeImg: src });
     return {
       activeImg: this.state.activeImg,
-      thumb0: set('assets/eh-na7m-2.jpg'),
+      thumb0: set('assets/eh-na7m-autumn.png'),
       thumb1: set('assets/detail/na7m-5.jpg'),
       thumb2: set('assets/detail/na7m-4.jpg'),
       thumb3: set('assets/detail/na7m-2.jpg'),
-      isActive0: this.state.activeImg === 'assets/eh-na7m-2.jpg' ? '#1D5FBF' : '#E7E7E2',
+      isActive0: this.state.activeImg === 'assets/eh-na7m-autumn.png' ? '#1D5FBF' : '#E7E7E2',
       isActive1: this.state.activeImg === 'assets/detail/na7m-5.jpg' ? '#1D5FBF' : '#E7E7E2',
       isActive2: this.state.activeImg === 'assets/detail/na7m-4.jpg' ? '#1D5FBF' : '#E7E7E2',
       isActive3: this.state.activeImg === 'assets/detail/na7m-2.jpg' ? '#1D5FBF' : '#E7E7E2'
